@@ -53,15 +53,17 @@ def main():
     print(f"Open the Text Editor and click inside it. Typing starts in {args.wait}s...")
     time.sleep(args.wait)
 
+    hold = 0.01 if args.scale >= 0.5 else 0.001
     start = time.time()
+    actual = []
     for code, t in events:
         delay = start + t - time.time()
         if delay > 0:
             time.sleep(delay)
-        press(ui, code, 0.01)
+        actual.append(time.time())
+        press(ui, code, hold)
     total = time.time() - start
-    gaps = [events[i + 1][1] - events[i][1] for i in range(len(events) - 1)]
-    gaps.sort()
+    gaps = sorted(b - a for a, b in zip(actual, actual[1:]))
     median_ms = 1000 * gaps[len(gaps) // 2]
     print(f"Replayed {len(events)} keys in {total:.2f}s (median gap {median_ms:.0f} ms)")
     time.sleep(1)
