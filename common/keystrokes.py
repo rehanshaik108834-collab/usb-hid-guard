@@ -79,3 +79,23 @@ def analyze(events):
         "min_ms": min(gaps),
         "keys_per_sec": (len(times) - 1) / span if span > 0 else float("inf"),
     }
+
+
+def read_all_events(dev, timeout):
+    """Like read_batch, but returns (timestamp, keycode, value) for key-down (1) AND key-up (0)."""
+    try:
+        ready, _, _ = select.select([dev.fd], [], [], max(0.0, timeout))
+    except (OSError, ValueError):
+        return [], True
+    if not ready:
+        return [], False
+    out = []
+    try:
+        for ev in dev.read():
+            if ev.type == e.EV_KEY and ev.value in (0, 1):
+                out.append((ev.timestamp(), ev.code, ev.value))
+    except BlockingIOError:
+        pass
+    except OSError:
+        return out, True
+    return out, False

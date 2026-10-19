@@ -1,19 +1,24 @@
 {
   "whitelist": [
-    "0001:0001",
-    "0002:0006",
-    "80ee:0021",
-    "80ee:cafe",
-    "0000:0001",
-    "0000:0003",
-    "0000:0006",
-    "1d6b:0001",
-    "1d6b:0002",
-    "1d6b:0003"
+    "0001:0001", "0002:0006", "80ee:0021", "80ee:cafe",
+    "0000:0001", "0000:0003", "0000:0006",
+    "1d6b:0001", "1d6b:0002", "1d6b:0003",
+    "046d:c31c", "05e0:1200"
   ],
-  "timing": {
-    "threshold_ms": 20,
-    "min_keys": 10,
-    "timeout_s": 20
+  "timing": { "threshold_ms": 20, "min_keys": 10, "timeout_s": 20 },
+  "proposed": {
+    "min_keys": 6,
+    "median_threshold_ms": 20,
+    "watch_s": 30,
+    "alert_score": 30,
+    "block_score": 70,
+    "weights": {
+      "not_whitelisted": 30, "attack_board_id": 40, "id_collision": 30,
+      "composite": 40, "missing_serial": 10,
+      "fast_typing": 50, "launcher": 20, "shell_keyword": 50
+    },
+    "attack_board_ids": ["16c0:27db"],
+    "keywords": ["powershell", "cmd.exe", "cmd /c", "curl", "wget", "bash -c",
+                 "sudo", "invoke-webrequest", "certutil", "chmod"]
   }
 }
