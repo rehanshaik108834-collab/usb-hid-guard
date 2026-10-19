@@ -71,7 +71,9 @@ def main():
     gaps = [round(b - a, 6) for a, b in zip(times, times[1:])]
     if not gaps:
         sys.exit("Not enough keys recorded.")
-    n = len([f for f in os.listdir(OUT_DIR) if f.startswith(args.label)]) + 1
+    n = 1
+    while os.path.exists(os.path.join(OUT_DIR, f"{args.label}_{n}.json")):  # never overwrite
+        n += 1
     path = os.path.join(OUT_DIR, f"{args.label}_{n}.json")
     with open(path, "w") as f:
         json.dump({"label": args.label, "sentence": SENTENCE,
