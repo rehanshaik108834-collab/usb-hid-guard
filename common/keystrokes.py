@@ -10,12 +10,13 @@ MODIFIERS = {
     e.KEY_LEFTALT, e.KEY_RIGHTALT, e.KEY_LEFTMETA, e.KEY_RIGHTMETA, e.KEY_CAPSLOCK,
 }
 LETTERS = {getattr(e, f"KEY_{c}") for c in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+DIGITS = {getattr(e, f"KEY_{c}") for c in "1234567890"}
 
 
 def is_keyboard_like(dev):
     """True if the input device has letter keys (so mice, buttons, tablets are ignored)."""
     keys = set(dev.capabilities().get(e.EV_KEY, []))
-    return bool(keys & LETTERS)
+    return bool(keys & (LETTERS | DIGITS))
 
 
 def read_batch(dev, timeout):

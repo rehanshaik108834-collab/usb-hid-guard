@@ -94,7 +94,7 @@ def main():
     args = p.parse_args()
 
     text = args.text if args.text else PAYLOADS[args.payload]
-    keys = sorted({code for ch in text if ch in KEYMAP for code in (KEYMAP[ch][0],)} | {e.KEY_LEFTSHIFT})
+    keys = sorted({code for code, _ in KEYMAP.values()} | {e.KEY_LEFTSHIFT})
     ui = UInput({e.EV_KEY: keys}, name=args.name, vendor=int(args.vid, 16),
                 product=int(args.pid, 16), bustype=e.BUS_USB)
     print(f"Created {args.name!r} with ID {args.vid}:{args.pid}, mode={args.mode}")
