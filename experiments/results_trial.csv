@@ -1,0 +1,61 @@
+system,scenario,scenario_name,expected,run,decision,score,latency_ms,leaked,keys,wall_s,trace
+A,S1,"Legit keyboard, normal typing",legit,1,ALLOW,,,43,43,14.6,rehan_normal_1.json
+A,S1,"Legit keyboard, normal typing",legit,2,ALLOW,,,43,43,12.4,rehan_normal_2.json
+A,S2,"Unknown device, fast attack",attack,1,BLOCK,,,0,59,5.4,
+A,S2,"Unknown device, fast attack",attack,2,BLOCK,,,0,59,8.0,
+A,S3,"Fast attack, spoofed ID, plain text",attack,1,ALLOW,,,59,59,5.3,
+A,S3,"Fast attack, spoofed ID, plain text",attack,2,ALLOW,,,59,59,5.3,
+A,S4,"Fast attack, spoofed ID, shell text",attack,1,ALLOW,,,36,36,5.3,
+A,S4,"Fast attack, spoofed ID, shell text",attack,2,ALLOW,,,36,36,5.2,
+A,S5,Composite device (simulated),attack,1,ALLOW,,,43,43,12.6,
+A,S5,Composite device (simulated),attack,2,ALLOW,,,43,43,15.5,
+A,S6,"Fast human typist, legit ID",legit,1,ALLOW,,,43,43,11.1,rehan_fast_1.json
+A,S6,"Fast human typist, legit ID",legit,2,ALLOW,,,43,43,11.2,rehan_fast_2.json
+A,S7,"Slow attack, spoofed ID, plain text",attack,1,ALLOW,,,59,59,25.0,
+A,S7,"Slow attack, spoofed ID, plain text",attack,2,ALLOW,,,59,59,20.5,
+A,S8,"Slow attack, spoofed ID, shell text",attack,1,ALLOW,,,36,36,15.1,
+A,S8,"Slow attack, spoofed ID, shell text",attack,2,ALLOW,,,36,36,16.9,
+A,S9,"Barcode scanner (fast, whitelisted)",legit,1,ALLOW,,,13,13,5.3,
+A,S9,"Barcode scanner (fast, whitelisted)",legit,2,ALLOW,,,13,13,5.3,
+A,S10,Second identical keyboard (same ID),legit,1,ALLOW,,,43,43,11.3,rehan_fast_1.json
+A,S10,Second identical keyboard (same ID),legit,2,ALLOW,,,43,43,12.2,rehan_fast_2.json
+B,S1,"Legit keyboard, normal typing",legit,1,ALLOW,,,43,43,14.7,rehan_normal_1.json
+B,S1,"Legit keyboard, normal typing",legit,2,ALLOW,,,43,43,15.3,rehan_normal_2.json
+B,S2,"Unknown device, fast attack",attack,1,BLOCK,,70,10,59,7.1,
+B,S2,"Unknown device, fast attack",attack,2,BLOCK,,119,10,59,6.1,
+B,S3,"Fast attack, spoofed ID, plain text",attack,1,BLOCK,,88,10,59,6.1,
+B,S3,"Fast attack, spoofed ID, plain text",attack,2,BLOCK,,71,10,59,5.8,
+B,S4,"Fast attack, spoofed ID, shell text",attack,1,BLOCK,,71,10,36,6.0,
+B,S4,"Fast attack, spoofed ID, shell text",attack,2,BLOCK,,69,10,36,5.7,
+B,S5,Composite device (simulated),attack,1,ALLOW,,,43,43,12.9,
+B,S5,Composite device (simulated),attack,2,ALLOW,,,43,43,11.9,
+B,S6,"Fast human typist, legit ID",legit,1,ALLOW,,,43,43,11.7,rehan_fast_1.json
+B,S6,"Fast human typist, legit ID",legit,2,ALLOW,,,43,43,11.4,rehan_fast_2.json
+B,S7,"Slow attack, spoofed ID, plain text",attack,1,ALLOW,,,59,59,22.3,
+B,S7,"Slow attack, spoofed ID, plain text",attack,2,ALLOW,,,59,59,19.5,
+B,S8,"Slow attack, spoofed ID, shell text",attack,1,ALLOW,,,36,36,13.8,
+B,S8,"Slow attack, spoofed ID, shell text",attack,2,ALLOW,,,36,36,15.8,
+B,S9,"Barcode scanner (fast, whitelisted)",legit,1,BLOCK,,46,10,13,5.7,
+B,S9,"Barcode scanner (fast, whitelisted)",legit,2,BLOCK,,70,10,13,5.5,
+B,S10,Second identical keyboard (same ID),legit,1,ALLOW,,,43,43,11.3,rehan_fast_1.json
+B,S10,Second identical keyboard (same ID),legit,2,ALLOW,,,43,43,11.4,rehan_fast_2.json
+C,S1,"Legit keyboard, normal typing",legit,1,ALLOW,0,,43,43,14.9,rehan_normal_1.json
+C,S1,"Legit keyboard, normal typing",legit,2,ALLOW,0,,43,43,12.9,rehan_normal_2.json
+C,S2,"Unknown device, fast attack",attack,1,BLOCK,80,41,6,59,6.1,
+C,S2,"Unknown device, fast attack",attack,2,BLOCK,80,44,6,59,6.2,
+C,S3,"Fast attack, spoofed ID, plain text",attack,1,BLOCK,80,30,6,59,5.9,
+C,S3,"Fast attack, spoofed ID, plain text",attack,2,BLOCK,80,83,6,59,5.9,
+C,S4,"Fast attack, spoofed ID, shell text",attack,1,BLOCK,80,101,6,36,5.8,
+C,S4,"Fast attack, spoofed ID, shell text",attack,2,BLOCK,80,15,6,36,5.8,
+C,S5,Composite device (simulated),attack,1,BLOCK,70,0,0,43,15.3,
+C,S5,Composite device (simulated),attack,2,BLOCK,70,0,0,43,24.5,
+C,S6,"Fast human typist, legit ID",legit,1,ALLOW,0,,43,43,11.4,rehan_fast_1.json
+C,S6,"Fast human typist, legit ID",legit,2,ALLOW,0,,43,43,11.2,rehan_fast_2.json
+C,S7,"Slow attack, spoofed ID, plain text",attack,1,ALERT,30,,59,59,22.3,
+C,S7,"Slow attack, spoofed ID, plain text",attack,2,ALERT,30,,59,59,20.7,
+C,S8,"Slow attack, spoofed ID, shell text",attack,1,BLOCK,80,2388,10,36,14.4,
+C,S8,"Slow attack, spoofed ID, shell text",attack,2,BLOCK,80,2361,10,36,13.0,
+C,S9,"Barcode scanner (fast, whitelisted)",legit,1,ALERT,50,,13,13,5.2,
+C,S9,"Barcode scanner (fast, whitelisted)",legit,2,ALERT,50,,13,13,5.4,
+C,S10,Second identical keyboard (same ID),legit,1,ALERT,30,,43,43,11.5,rehan_fast_1.json
+C,S10,Second identical keyboard (same ID),legit,2,ALERT,30,,43,43,11.3,rehan_fast_2.json
