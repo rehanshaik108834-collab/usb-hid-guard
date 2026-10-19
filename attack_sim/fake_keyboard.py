@@ -1,0 +1,115 @@
+"""
+Simulated keystroke-injection device (HARMLESS: it only types text).
+
+Usage:
+  sudo venv/bin/python attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode fast
+
+Modes (delay between key presses):
+  fast   : 2 ms, machine speed, like a Rubber Ducky
+  slow   : random 80-300 ms, a stealthy attacker trying to look human
+  human  : about 150 ms with natural variation
+
+IMPORTANT: Open the 'Text Editor' app and click inside it before the countdown
+ends. The text will be typed there. Never point this at anything but a text editor.
+"""
+import argparse
+import random
+import time
+
+from evdev import UInput, ecodes as e
+
+PAYLOADS = {
+    "hello": "HELLO from the simulated keyboard. This is a harmless test.",
+    "shellish": "powershell -Command Write-Host HELLO",
+    "sentence": "the quick brown fox jumps over the lazy dog",
+}
+
+# character -> (keycode, needs_shift)
+KEYMAP = {}
+for ch in "abcdefghijklmnopqrstuvwxyz":
+    code = getattr(e, f"KEY_{ch.upper()}")
+    KEYMAP[ch] = (code, False)
+    KEYMAP[ch.upper()] = (code, True)
+for ch in "1234567890":
+    KEYMAP[ch] = (getattr(e, f"KEY_{ch}"), False)
+KEYMAP.update({
+    " ": (e.KEY_SPACE, False),
+    "-": (e.KEY_MINUS, False),
+    "_": (e.KEY_MINUS, True),
+    ".": (e.KEY_DOT, False),
+    ",": (e.KEY_COMMA, False),
+    "/": (e.KEY_SLASH, False),
+    ":": (e.KEY_SEMICOLON, True),
+    "=": (e.KEY_EQUAL, False),
+    "'": (e.KEY_APOSTROPHE, False),
+    "\n": (e.KEY_ENTER, False),
+})
+
+
+def next_delay(mode):
+    if mode == "fast":
+        return 0.002
+    if mode == "slow":
+        return random.uniform(0.08, 0.30)
+    return max(0.05, random.gauss(0.15, 0.05))  # human
+
+
+def press(ui, code, hold):
+    ui.write(e.EV_KEY, code, 1)
+    ui.syn()
+    time.sleep(hold)
+    ui.write(e.EV_KEY, code, 0)
+    ui.syn()
+
+
+def type_text(ui, text, mode):
+    delays = []
+    for ch in text:
+        if ch not in KEYMAP:
+            continue
+        code, shift = KEYMAP[ch]
+        delay = next_delay(mode)
+        hold = min(0.01, delay / 2)
+        if shift:
+            ui.write(e.EV_KEY, e.KEY_LEFTSHIFT, 1)
+            ui.syn()
+        press(ui, code, hold)
+        if shift:
+            ui.write(e.EV_KEY, e.KEY_LEFTSHIFT, 0)
+            ui.syn()
+        time.sleep(max(0, delay - hold))
+        delays.append(delay)
+    return delays
+
+
+def main():
+    p = argparse.ArgumentParser()
+    p.add_argument("--name", default="Fake Keyboard")
+    p.add_argument("--vid", default="dead")
+    p.add_argument("--pid", default="beef")
+    p.add_argument("--mode", choices=["fast", "slow", "human"], default="fast")
+    p.add_argument("--payload", choices=list(PAYLOADS), default="hello")
+    p.add_argument("--text", help="custom text instead of a preset payload")
+    p.add_argument("--wait", type=int, default=6, help="seconds before typing starts")
+    args = p.parse_args()
+
+    text = args.text if args.text else PAYLOADS[args.payload]
+    keys = sorted({code for ch in text if ch in KEYMAP for code in (KEYMAP[ch][0],)} | {e.KEY_LEFTSHIFT})
+    ui = UInput({e.EV_KEY: keys}, name=args.name, vendor=int(args.vid, 16),
+                product=int(args.pid, 16), bustype=e.BUS_USB)
+    print(f"Created {args.name!r} with ID {args.vid}:{args.pid}, mode={args.mode}")
+    print(f"Open the Text Editor and click inside it. Typing starts in {args.wait}s...")
+    time.sleep(args.wait)
+
+    start = time.time()
+    delays = type_text(ui, text, args.mode)
+    total = time.time() - start
+    avg_ms = 1000 * sum(delays) / max(1, len(delays))
+    print(f"Typed {len(delays)} characters in {total:.2f}s (average gap {avg_ms:.1f} ms)")
+    time.sleep(1)
+    ui.close()
+    print("Device removed.")
+
+
+if __name__ == "__main__":
+    main()
