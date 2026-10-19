@@ -2,3 +2,4 @@ system,cpu_seconds,wall_seconds,avg_cpu_percent,rss_mb
 A,0.32,226.5,0.14,28.1
 B,1.61,223.2,0.72,29.3
 C,1.43,232.6,0.61,29.4
+C,0.42,58.2,0.72,29.5

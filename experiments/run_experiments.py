@@ -43,9 +43,10 @@ def traces(pattern):
     return files or sorted(glob.glob(os.path.join(TRACES, "*.json")))
 
 
-def fake(name, vid, pid, mode, payload="hello", text=None):
+def fake(name, vid, pid, mode, payload="hello", text=None, launcher="none"):
     def build(i):
-        cmd = [PY, FAKE, "--name", name, "--vid", vid, "--pid", pid, "--mode", mode, "--wait", "1"]
+        cmd = [PY, FAKE, "--name", name, "--vid", vid, "--pid", pid, "--mode", mode, "--wait", "1",
+               "--launcher", launcher]
         cmd += ["--text", text] if text else ["--payload", payload]
         return cmd, ""
     return build
@@ -70,6 +71,11 @@ SCENARIOS = {
     "S8": ("Slow attack, spoofed ID, shell text", "attack", fake("Spoofed KB", "0001", "0001", "slow", "shellish")),
     "S9": ("Barcode scanner (fast, whitelisted)", "legit", fake("Barcode Scanner", "05e0", "1200", "fast", text="4006381333931")),
     "S10": ("Second identical keyboard (same ID)", "legit", replay("Twin KB", "0001", "0001", "*.json")),
+    # 046d:c31c is whitelisted but NOT connected, so there is no ID collision to catch it.
+    "S11": ("Fast attack, spoofed whitelisted ID (not connected)", "attack", fake("Spoofed Logitech", "046d", "c31c", "fast")),
+    "S12": ("Slow attack, spoofed ID, Win+R launcher", "attack", fake("Spoofed KB", "0001", "0001", "slow", launcher="win-r")),
+    "S13": ("Digispark board ID, slow typing", "attack", fake("Digispark", "16c0", "27db", "slow")),
+    "S14": ("No serial number (simulated), spoofed ID, slow", "attack", fake("No Serial KB", "0001", "0001", "slow")),
 }
 
 DEC_RE = re.compile(r"-> (ALLOW|BLOCK|ALERT|NO-DATA|WOULD-BLOCK)\b")

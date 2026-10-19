@@ -59,3 +59,7 @@ C,S9,"Barcode scanner (fast, whitelisted)",legit,1,ALERT,50,,13,13,5.2,
 C,S9,"Barcode scanner (fast, whitelisted)",legit,2,ALERT,50,,13,13,5.4,
 C,S10,Second identical keyboard (same ID),legit,1,ALERT,30,,43,43,11.5,rehan_fast_1.json
 C,S10,Second identical keyboard (same ID),legit,2,ALERT,30,,43,43,11.3,rehan_fast_2.json
+C,S11,"Fast attack, spoofed whitelisted ID (not connected)",attack,1,ALERT,50,,59,59,5.6,
+C,S12,"Slow attack, spoofed ID, Win+R launcher",attack,1,ALERT,50,,59,59,16.9,
+C,S13,"Digispark board ID, slow typing",attack,1,BLOCK,70,0,0,59,15.9,
+C,S14,"No serial number (simulated), spoofed ID, slow",attack,1,ALERT,40,,59,59,16.8,

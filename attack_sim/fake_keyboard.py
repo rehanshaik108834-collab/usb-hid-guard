@@ -9,6 +9,9 @@ Modes (delay between key presses):
   slow   : random 80-300 ms, a stealthy attacker trying to look human
   human  : about 150 ms with natural variation
 
+--launcher win-r presses Win+R first (the Windows "Run" dialog shortcut that real attack
+scripts use). On Ubuntu it does nothing by default, so the text still goes to the editor.
+
 IMPORTANT: Open the 'Text Editor' app and click inside it before the countdown
 ends. The text will be typed there. Never point this at anything but a text editor.
 """
@@ -90,11 +93,13 @@ def main():
     p.add_argument("--mode", choices=["fast", "slow", "human"], default="fast")
     p.add_argument("--payload", choices=list(PAYLOADS), default="hello")
     p.add_argument("--text", help="custom text instead of a preset payload")
+    p.add_argument("--launcher", choices=["none", "win-r"], default="none",
+                   help="press a launcher shortcut before typing")
     p.add_argument("--wait", type=int, default=6, help="seconds before typing starts")
     args = p.parse_args()
 
     text = args.text if args.text else PAYLOADS[args.payload]
-    keys = sorted({code for code, _ in KEYMAP.values()} | {e.KEY_LEFTSHIFT})
+    keys = sorted({code for code, _ in KEYMAP.values()} | {e.KEY_LEFTSHIFT, e.KEY_LEFTMETA})
     ui = UInput({e.EV_KEY: keys}, name=args.name, vendor=int(args.vid, 16),
                 product=int(args.pid, 16), bustype=e.BUS_USB)
     print(f"Created {args.name!r} with ID {args.vid}:{args.pid}, mode={args.mode}")
@@ -102,6 +107,13 @@ def main():
     time.sleep(args.wait)
 
     start = time.time()
+    if args.launcher == "win-r":
+        ui.write(e.EV_KEY, e.KEY_LEFTMETA, 1)
+        ui.syn()
+        press(ui, e.KEY_R, 0.01)
+        ui.write(e.EV_KEY, e.KEY_LEFTMETA, 0)
+        ui.syn()
+        time.sleep(0.5)  # attack scripts wait for the Run dialog to open
     delays = type_text(ui, text, args.mode)
     total = time.time() - start
     avg_ms = 1000 * sum(delays) / max(1, len(delays))

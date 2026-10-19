@@ -18,7 +18,9 @@ LABEL = {"A": "A: Baseline (ID only)", "B": "B: Timing-only", "C": "C: Proposed 
 COLOR = {"A": "#999999", "B": "#e69f00", "C": "#0072b2"}
 SHORT = {"S1": "Legit\nkeyboard", "S2": "Unknown\nfast", "S3": "Spoofed\nfast, plain", "S4": "Spoofed\nfast, shell",
          "S5": "Composite\n(simulated)", "S6": "Fast human\ntypist", "S7": "Spoofed\nslow, plain",
-         "S8": "Spoofed\nslow, shell", "S9": "Barcode\nscanner", "S10": "Identical\nkeyboard"}
+         "S8": "Spoofed\nslow, shell", "S9": "Barcode\nscanner", "S10": "Identical\nkeyboard",
+         "S11": "Spoofed\nwhitelisted", "S12": "Win+R\nlauncher", "S13": "Digispark\nID",
+         "S14": "No serial\n(simulated)"}
 
 
 def tick(s):
@@ -75,7 +77,7 @@ def grouped(ax, scens, value_fn, ylabel):
 
 # Figure 1: detection of attacks
 if attack:
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(max(10, 1.2 * len(attack)), 5))
     grouped(ax, attack, lambda d: pct(d["blocked"]), "Attacks blocked (%)")
     ax.set_ylim(0, 128)
     ax.set_title("Attack detection rate by system and scenario")
@@ -99,7 +101,7 @@ if legit:
 
 # Figure 3: keystrokes leaked
 if attack:
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(max(10, 1.2 * len(attack)), 5))
     grouped(ax, attack, lambda d: d["leaked"].mean(), "Mean keystrokes that reached the system")
     ax.set_ylim(0, ax.get_ylim()[1] * 1.3)
     ax.set_title("Keystrokes leaked before the attack was stopped (lower is better)")
