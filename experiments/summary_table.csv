@@ -1,0 +1,31 @@
+scenario,name,expected,system,runs,blocked_%,alert_or_block_%,mean_leaked_keys,mean_latency_ms
+S1,"Legit keyboard, normal typing",legit,A,2,0.0,0.0,43.0,
+S1,"Legit keyboard, normal typing",legit,B,2,0.0,0.0,43.0,
+S1,"Legit keyboard, normal typing",legit,C,2,0.0,0.0,43.0,
+S2,"Unknown device, fast attack",attack,A,2,100.0,100.0,0.0,
+S2,"Unknown device, fast attack",attack,B,2,100.0,100.0,10.0,94.5
+S2,"Unknown device, fast attack",attack,C,2,100.0,100.0,6.0,42.5
+S3,"Fast attack, spoofed ID, plain text",attack,A,2,0.0,0.0,59.0,
+S3,"Fast attack, spoofed ID, plain text",attack,B,2,100.0,100.0,10.0,79.5
+S3,"Fast attack, spoofed ID, plain text",attack,C,2,100.0,100.0,6.0,56.5
+S4,"Fast attack, spoofed ID, shell text",attack,A,2,0.0,0.0,36.0,
+S4,"Fast attack, spoofed ID, shell text",attack,B,2,100.0,100.0,10.0,70.0
+S4,"Fast attack, spoofed ID, shell text",attack,C,2,100.0,100.0,6.0,58.0
+S5,Composite device (simulated),attack,A,2,0.0,0.0,43.0,
+S5,Composite device (simulated),attack,B,2,0.0,0.0,43.0,
+S5,Composite device (simulated),attack,C,2,100.0,100.0,0.0,0.0
+S6,"Fast human typist, legit ID",legit,A,2,0.0,0.0,43.0,
+S6,"Fast human typist, legit ID",legit,B,2,0.0,0.0,43.0,
+S6,"Fast human typist, legit ID",legit,C,2,0.0,0.0,43.0,
+S7,"Slow attack, spoofed ID, plain text",attack,A,2,0.0,0.0,59.0,
+S7,"Slow attack, spoofed ID, plain text",attack,B,2,0.0,0.0,59.0,
+S7,"Slow attack, spoofed ID, plain text",attack,C,2,0.0,100.0,59.0,
+S8,"Slow attack, spoofed ID, shell text",attack,A,2,0.0,0.0,36.0,
+S8,"Slow attack, spoofed ID, shell text",attack,B,2,0.0,0.0,36.0,
+S8,"Slow attack, spoofed ID, shell text",attack,C,2,100.0,100.0,10.0,2374.5
+S9,"Barcode scanner (fast, whitelisted)",legit,A,2,0.0,0.0,13.0,
+S9,"Barcode scanner (fast, whitelisted)",legit,B,2,100.0,100.0,10.0,58.0
+S9,"Barcode scanner (fast, whitelisted)",legit,C,2,0.0,100.0,13.0,
+S10,Second identical keyboard (same ID),legit,A,2,0.0,0.0,43.0,
+S10,Second identical keyboard (same ID),legit,B,2,0.0,0.0,43.0,
+S10,Second identical keyboard (same ID),legit,C,2,0.0,100.0,43.0,
