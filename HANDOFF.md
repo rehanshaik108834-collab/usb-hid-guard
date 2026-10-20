@@ -39,9 +39,17 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
   moved superseded logs and backup results into raw_logs/superseded/ and experiments/history/, helpers
   into tools/. Report 6.1 table now lists the dashboard and the demo script.
 
+- Code check (2026-10-20): System C blocks outright only on machine-speed typing; otherwise it holds the
+  keyboard and shows a 4-digit code (CHALLENGE). Typing it on the device unlocks it. New scenarios S15/S16;
+  experiment now 1,056 runs, 16 scenarios (C 64% blocked, 100% flagged, 0 false blocks). Report, README,
+  dashboard and demo (new act 11) updated. Real keyboard test 1 (code passed) done with a 2.4G wireless keyboard.
+
 ## Still to do
 1. Report cover: names and course (ICS) are in; replace the placeholder roll numbers (S2024001XXXX) and
    "Dr. Guide Name" with the real ones.
+2. Real keyboard tests 1 and 2 with screenshots -> fill report section 6.9 (placeholder), then update
+   7.9 if the failed-check switch-off was seen.
+3. Retake dashboard screenshots Fig 6.10 and 6.12 (they still show 936 runs).
 
 ## Running the dashboard
 Linux VM:  `venv/bin/python dashboard/app.py`

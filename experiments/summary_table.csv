@@ -22,7 +22,7 @@ S7,"Slow attack, spoofed ID, plain text",attack,B,20,0.0,0.0,59.0,
 S7,"Slow attack, spoofed ID, plain text",attack,C,20,0.0,100.0,59.0,
 S8,"Slow attack, spoofed ID, shell text",attack,A,20,0.0,0.0,36.0,
 S8,"Slow attack, spoofed ID, shell text",attack,B,20,0.0,0.0,36.0,
-S8,"Slow attack, spoofed ID, shell text",attack,C,20,100.0,100.0,10.0,2500.6
+S8,"Slow attack, spoofed ID, shell text",attack,C,20,100.0,100.0,10.0,1733.2
 S9,"Barcode scanner (fast, whitelisted)",legit,A,20,0.0,0.0,13.0,
 S9,"Barcode scanner (fast, whitelisted)",legit,B,20,100.0,100.0,10.0,38.0
 S9,"Barcode scanner (fast, whitelisted)",legit,C,20,0.0,100.0,13.0,
@@ -41,3 +41,9 @@ S13,"Digispark board ID, slow typing",attack,C,20,100.0,100.0,0.0,0.0
 S14,"No serial number (simulated), spoofed ID, slow",attack,A,20,0.0,0.0,59.0,
 S14,"No serial number (simulated), spoofed ID, slow",attack,B,20,0.0,0.0,59.0,
 S14,"No serial number (simulated), spoofed ID, slow",attack,C,20,0.0,100.0,59.0,
+S15,"New keyboard, person types a command",legit,A,20,100.0,100.0,0.0,
+S15,"New keyboard, person types a command",legit,B,20,0.0,0.0,36.0,
+S15,"New keyboard, person types a command",legit,C,20,0.0,0.0,36.0,
+S16,"Slow attack, unknown ID, shell text",attack,A,20,100.0,100.0,0.0,
+S16,"Slow attack, unknown ID, shell text",attack,B,20,0.0,0.0,36.0,
+S16,"Slow attack, unknown ID, shell text",attack,C,20,100.0,100.0,10.0,1734.3

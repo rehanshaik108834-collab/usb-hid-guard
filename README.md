@@ -13,17 +13,25 @@ new keyboard by what it does.
 | --- | --- | --- |
 | A, existing approach | `system_a_baseline/` | VID:PID against a whitelist, once at plug-in |
 | B, timing only | `system_b_timing/` | Median gap of the first 10 keystrokes below 20 ms |
-| C, proposed | `system_c_proposed/` | Points from three layers (descriptor, typing speed, typed content); alert at 30, block at 70 |
+| C, proposed | `system_c_proposed/` | Points from three layers (descriptor, typing speed, typed content); alert at 30, block or hold at 70 |
 
-## Results (936 automated runs, 14 scenarios)
+At 70 points, System C blocks at once only when it has proof: typing faster than any person can.
+Otherwise the keyboard is held (its keys stop reaching the computer) and a 4-digit code is shown on the
+dashboard and in the detector's terminal. A person types the code on the new keyboard and it is unlocked;
+an injection device cannot see the screen and stays blocked.
+
+## Results (1,056 automated runs, 16 scenarios)
 
 | | A | B | C |
 | --- | --- | --- | --- |
-| Attack runs blocked | 20% | 40% | 60% |
-| Attack runs blocked or alerted | 20% | 40% | 100% |
-| Legitimate runs wrongly blocked | 0 of 112 | 20 of 112 (barcode scanner) | 0 of 112 |
+| Attack runs blocked | 27% (60 of 220) | 36% (80 of 220) | 64% (140 of 220) |
+| Attack runs blocked or alerted | 27% | 36% | 100% |
+| Legitimate runs wrongly blocked | 20 of 132 (new keyboard) | 20 of 132 (barcode scanner) | 0 of 132 |
 | Keystrokes leaked before a fast attack was stopped | not stopped (spoofed ID) | about 10 | 6 |
-| Average CPU / peak memory | 0.13% / 28 MB | 0.32% / 29 MB | 0.41% / 30 MB |
+| Average CPU / peak memory | 0.12% / 28 MB | 0.30% / 29 MB | 0.39% / 32 MB |
+
+Tested with real hardware too: a USB wireless keyboard was held after its user typed "powershell" and
+unlocked by typing the code shown.
 
 Typing recorded from 11 people never came close to the 20 ms threshold (closest: 86 ms); the simulated
 attack typed at a median of 3.4 ms per key. Full tables: `experiments/summary_table.csv`; graphs:

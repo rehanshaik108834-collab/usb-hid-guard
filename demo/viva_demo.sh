@@ -113,8 +113,8 @@ say "Say: not whitelisted +30 and 'powershell' +50 = 80, so it is held, exactly 
 say "     read the code on the dashboard and type it, so the keyboard is unlocked. (The simulator plays the person.)"
 
 # ---- Wrap-up -----------------------------------------------------------------------------
-bold "Results (936 runs, 14 scenarios): open the dashboard's Results page"
-say "A blocked 20% of attack runs, B 40% (but blocked the scanner), C 60%; C blocked or alerted 100%."
-say "C wrongly blocked 0 legitimate devices."
+bold "Results (1,056 runs, 16 scenarios): open the dashboard's Results page"
+say "A blocked 27% of attack runs (and a new real keyboard), B 36% (and the scanner), C 64%."
+say "C blocked or alerted 100% of attack runs and wrongly blocked 0 legitimate devices."
 echo
 read -rp "Demo finished. Press Enter to stop the dashboard and exit. " _
