@@ -11,7 +11,15 @@
   <span class="live"><i></i>Live · <span data-updated>{{ now }}</span></span>
 </div>
 
-<div data-live="{{ url_for('overview_partial') }}">
+<div class="toolbar">
+  <span class="seg" aria-label="Time">
+    {% for key, label in WINDOWS.items() %}
+      <a href="{{ url_for('overview', window=key if key != 'session' else None) }}" class="{{ 'on' if window == key }}">{{ label }}</a>
+    {% endfor %}
+  </span>
+</div>
+
+<div data-live="{{ url_for('overview_partial', window=window) }}">
   {% include 'partials/overview_live.html' %}
 </div>
 

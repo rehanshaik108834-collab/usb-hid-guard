@@ -1,6 +1,6 @@
 {% import '_macros.html' as m with context %}
 <p class="note-line" style="margin:0 0 14px">
-  {{ tally.seen }} device{{ '' if tally.seen == 1 else 's' }} ·
+  {{ tally.seen }} {{ 'device' if latest else 'appearance' }}{{ '' if tally.seen == 1 else 's' }}{% if tally.seen > sessions|length %} (newest {{ sessions|length }} shown){% endif %} ·
   {{ tally.ALLOW }} allowed · {{ tally.ALERT }} alert{{ '' if tally.ALERT == 1 else 's' }} · {{ tally.BLOCK }} blocked
   {% if tally.WATCHING %}· {{ tally.WATCHING }} being watched{% endif %}
   {% if start %}· showing events from {{ start }}{% endif %}

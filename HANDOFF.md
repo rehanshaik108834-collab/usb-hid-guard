@@ -25,18 +25,22 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
 - Report (Claude Docs, all 9 sections written):
   https://claude.ai/code/artifact/9b3e1fb6-e831-48c3-984f-232980c1b10f
 - Dashboard `dashboard/` (Flask, read-only, light theme): Overview, Live monitor, Event log, Results, Method.
-  All pages render without errors.
+  Checked in a browser 2026-10-20 and polished: fixed "Keys seen" showing `<built-in method keys...>`,
+  tallies now count every session (not just the newest 60), Live monitor has "Latest per device",
+  Overview has a time-window switch, command boxes no longer overflow on Method.
+- Dashboard screenshots in `report_screenshots/dashboard/` (Fig_6.10 ... Fig_6.13, plus a spare event-log
+  shot); report subsection 6.8 "Monitoring dashboard" written with those four figures.
+- Viva demo: `demo/viva_demo.sh` (Linux VM). 10 acts: A blocks unknown / misses spoof, B blocks fast /
+  misses slow / blocks scanner, C blocks fast / slow shell / Digispark, alerts scanner, allows a human.
+  Start from an act with `./demo/viva_demo.sh 6`. Not yet run in the VM.
 
 ## Still to do
-1. Look at the dashboard in a browser and polish the design if needed (not yet visually checked).
-2. Take dashboard screenshots (Overview, Live monitor with data, Results, Method) into
-   `report_screenshots/dashboard/`, then fill report subsection "6.8 Monitoring dashboard" (still a
-   placeholder in the doc).
-3. Fill in team names / roll numbers / course on the report's cover.
-4. Demo script for the viva (run in the Linux VM).
+1. Report cover: names and course (ICS) are in; replace the placeholder roll numbers (S2024001XXXX) and
+   "Dr. Guide Name" with the real ones.
+2. Do a dry run of `demo/viva_demo.sh` in the Linux VM before the viva.
 
 ## Running the dashboard
 Linux VM:  `venv/bin/python dashboard/app.py`
 Windows:   `py -m venv venv-win` then `venv-win\Scripts\pip install flask psutil`
            then `venv-win\Scripts\python dashboard\app.py`
-Open http://127.0.0.1:5000. "Live monitor" -> "All time" shows the experiment's devices.
+Open http://127.0.0.1:5000. "Live monitor" -> "All time" + "Latest per device" shows one card per experiment device.

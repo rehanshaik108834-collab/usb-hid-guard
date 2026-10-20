@@ -88,6 +88,7 @@ h3 { font-family: var(--serif); font-weight: 600; font-size: 18px; margin: 0; }
 .g-2-even { grid-template-columns: 1fr 1fr; }
 .g-3 { grid-template-columns: repeat(3, 1fr); }
 .g-4 { grid-template-columns: repeat(4, 1fr); }
+.grid > *, .sessions > * { min-width: 0; }
 @media (max-width: 960px) { .g-2, .g-2-even, .g-3 { grid-template-columns: 1fr; } .g-4 { grid-template-columns: 1fr 1fr; } }
 
 /* ---------- stat tiles ---------- */
@@ -125,8 +126,8 @@ h3 { font-family: var(--serif); font-weight: 600; font-size: 18px; margin: 0; }
 .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 14px; border: 1px solid var(--rule); border-radius: 4px; background: var(--sheet-2); }
 .facts div { padding: 8px 12px; }
 .facts div + div { border-left: 1px solid var(--rule); }
-.facts dt { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-.facts dd { margin: 2px 0 0; font-family: var(--serif); font-size: 19px; font-variant-numeric: tabular-nums; }
+.facts dt { font-size: 11px; letter-spacing: .06em; white-space: nowrap; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.facts dd { margin: 2px 0 0; white-space: nowrap; font-family: var(--serif); font-size: 19px; font-variant-numeric: tabular-nums; }
 .facts dd small { font-family: var(--sans); font-size: 12px; color: var(--muted); }
 
 .sessions { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -229,7 +230,8 @@ input[type=search] { min-width: 240px; }
 .empty h3 { color: var(--ink); margin-bottom: 6px; }
 .empty pre { display: inline-block; text-align: left; margin: 14px 0 0; }
 pre.cmd { background: #f7f2e6; border: 1px solid var(--rule); border-left: 3px solid var(--ochre); border-radius: 4px; padding: 10px 14px;
-  font-family: var(--mono); font-size: 13px; color: var(--ink); overflow-x: auto; margin: 8px 0 0; }
+  font-family: var(--mono); font-size: 13px; color: var(--ink); overflow-x: auto; margin: 8px 0 0;
+  white-space: pre-wrap; }
 .kpi-band { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--rule); border-radius: 6px; background: var(--sheet); }
 .kpi-band > div { padding: 18px 22px; }
 .kpi-band > div + div { border-left: 1px solid var(--rule); }

@@ -45,9 +45,9 @@
     </div>
     {% if s.letter == 'C' and s.score is not none %}{{ meter(s.score) }}{% endif %}
     {{ signals(s.signals) }}
-    {% if s.keys is not none or s.latency_ms is not none or s.median_ms is not none %}
+    {% if s.nkeys is not none or s.latency_ms is not none or s.median_ms is not none %}
     <dl class="facts">
-      <div><dt>Keys seen</dt><dd>{{ s.keys if s.keys is not none else '—' }}</dd></div>
+      <div><dt>Keys seen</dt><dd>{{ s.nkeys if s.nkeys is not none else '—' }}</dd></div>
       <div><dt>Median gap</dt><dd>{% if s.median_ms is not none %}{{ '%.1f'|format(s.median_ms) }} <small>ms</small>{% else %}—{% endif %}</dd></div>
       <div><dt>Block after</dt><dd>{% if s.latency_ms is not none %}{{ s.latency_ms }} <small>ms</small>{% else %}—{% endif %}</dd></div>
       <div><dt>Keys leaked</dt><dd>{{ s.leaked if s.leaked is not none else '—' }}</dd></div>

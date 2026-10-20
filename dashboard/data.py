@@ -136,7 +136,7 @@ def build_sessions(rows_ascending):
         s = open_.get(key)
         if d == "WATCHING" or (d in FINAL and (s is None or s["decision"])):
             s = {"id": e["id"], "letter": e["letter"], "name": e["name"], "vid": e["vid"], "pid": e["pid"],
-                 "kind": e["kind"], "started": e["ts"], "decision": None, "score": None, "keys": None,
+                 "kind": e["kind"], "started": e["ts"], "decision": None, "score": None, "nkeys": None,
                  "median_ms": None, "signals": [], "latency_ms": None, "leaked": None, "reason": e["reason"],
                  "descriptor_score": _num(r"descriptor score (\d+)", e["reason"], int)}
             sessions.append(s)
@@ -144,7 +144,7 @@ def build_sessions(rows_ascending):
         if d in FINAL:
             s.update(decision=d, decided=e["ts"], reason=e["reason"],
                      score=_num(r"\bscore (\d+)", e["reason"], int),
-                     keys=_num(r"(?:after|over) (\d+) keys", e["reason"], int),
+                     nkeys=_num(r"(?:after|over) (\d+) keys", e["reason"], int),
                      median_ms=_num(r"median (?:gap )?([\d.]+) ms", e["reason"]),
                      signals=parse_signals(e["letter"], e["reason"]))
         elif d == "WATCHING" and e["letter"] == "C":
@@ -161,10 +161,17 @@ def build_sessions(rows_ascending):
     return list(reversed(sessions))
 
 
-def live_sessions(window="session", since=None, system=None, limit=60):
-    rows, _ = query_events(window_start(window, since), system=system, limit=2000, ascending=False)
+def live_sessions(window="session", since=None, system=None, latest=False):
+    """All device sessions in the window, newest first. latest=True keeps only each device's newest one."""
+    rows, _ = query_events(window_start(window, since), system=system, limit=50000, ascending=False)
     rows.reverse()
-    return build_sessions(rows)[:limit]
+    sessions = build_sessions(rows)
+    if latest:
+        newest = {}
+        for s in sessions:
+            newest.setdefault((s["letter"], s["name"], s["vid"], s["pid"]), s)
+        sessions = list(newest.values())
+    return sessions
 
 
 def tally(sessions):

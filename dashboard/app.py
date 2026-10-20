@@ -38,37 +38,41 @@ def _filters():
 
 @app.route("/")
 def overview():
-    return render_template("overview.html", **_overview_ctx())
+    return render_template("overview.html", **_overview_ctx(_filters()[0]))
 
 
 @app.route("/partial/overview")
 def overview_partial():
-    return render_template("partials/overview_live.html", **_overview_ctx())
+    return render_template("partials/overview_live.html", **_overview_ctx(_filters()[0]))
 
 
-def _overview_ctx():
-    sessions = data.live_sessions("session")
-    events, _ = data.query_events(data.window_start("session"), limit=14)
+def _overview_ctx(window):
+    sessions = data.live_sessions(window)
+    events, _ = data.query_events(data.window_start(window), limit=14)
     return {"sessions": sessions, "tally": data.tally(sessions), "latest": sessions[0] if sessions else None,
-            "events": events, "exp": data.experiment(), "started": data.STARTED}
+            "events": events, "exp": data.experiment(), "started": data.STARTED, "window": window}
 
 
 @app.route("/monitor")
 def monitor():
     window, system, since = _filters()
-    return render_template("monitor.html", **_monitor_ctx(window, system, since))
+    return render_template("monitor.html", **_monitor_ctx(window, system, since, _latest()))
 
 
 @app.route("/partial/monitor")
 def monitor_partial():
     window, system, since = _filters()
-    return render_template("partials/monitor_live.html", **_monitor_ctx(window, system, since))
+    return render_template("partials/monitor_live.html", **_monitor_ctx(window, system, since, _latest()))
 
 
-def _monitor_ctx(window, system, since):
-    sessions = data.live_sessions(window, since, system)
-    return {"sessions": sessions, "tally": data.tally(sessions), "window": window, "system": system,
-            "since": since, "start": data.window_start(window, since),
+def _latest():
+    return request.args.get("latest") == "1"
+
+
+def _monitor_ctx(window, system, since, latest):
+    sessions = data.live_sessions(window, since, system, latest)
+    return {"sessions": sessions[:60], "tally": data.tally(sessions), "window": window, "system": system,
+            "since": since, "latest": latest, "start": data.window_start(window, since),
             "now_ts": time.strftime("%Y-%m-%d %H:%M:%S")}
 
 
