@@ -1,0 +1,23 @@
+{% import '_macros.html' as m with context %}
+<p class="note-line" style="margin:0 0 14px">
+  {{ tally.seen }} device{{ '' if tally.seen == 1 else 's' }} ·
+  {{ tally.ALLOW }} allowed · {{ tally.ALERT }} alert{{ '' if tally.ALERT == 1 else 's' }} · {{ tally.BLOCK }} blocked
+  {% if tally.WATCHING %}· {{ tally.WATCHING }} being watched{% endif %}
+  {% if start %}· showing events from {{ start }}{% endif %}
+</p>
+{% if sessions %}
+<div class="sessions">
+  {% for s in sessions %}
+    <article class="session st-{{ s.state }}">{{ m.device(s) }}</article>
+  {% endfor %}
+</div>
+{% else %}
+<section class="card">
+  <div class="empty">
+    <h3>Nothing to show yet</h3>
+    <p>When a detector is running, each new keyboard-like device appears here within a few seconds.</p>
+    {{ m.start_hint() }}
+    <pre class="cmd">sudo venv/bin/python attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode fast</pre>
+  </div>
+</section>
+{% endif %}

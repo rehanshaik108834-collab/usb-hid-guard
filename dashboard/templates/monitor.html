@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m with context %}
+{% block title %}Live monitor{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Live monitor</p>
+    <h1>Devices <em>as they appear</em></h1>
+    <p class="lede">One card per device. The score updates while the device types, and each warning sign shows which layer found it and how many points it added.</p>
+  </div>
+  <span class="live"><i></i>Live · <span data-updated>{{ now }}</span></span>
+</div>
+
+<div class="toolbar">
+  <span class="seg" aria-label="System">
+    <a href="{{ url_for('monitor', window=window, since=since) }}" class="{{ 'on' if not system }}">All systems</a>
+    {% for letter in SYSTEMS %}
+      <a href="{{ url_for('monitor', system=letter, window=window, since=since) }}" class="{{ 'on' if system == letter }}">{{ letter }} · {{ SYSTEMS[letter].name }}</a>
+    {% endfor %}
+  </span>
+  <span class="seg" aria-label="Time">
+    {% for key, label in WINDOWS.items() %}
+      <a href="{{ url_for('monitor', window=key, system=system) }}" class="{{ 'on' if window == key and not since }}">{{ label }}</a>
+    {% endfor %}
+  </span>
+  <a class="btn ghost" href="{{ url_for('monitor', system=system, since=now_ts) }}" title="Hide everything up to now">Clear view</a>
+</div>
+
+<div data-live="{{ url_for('monitor_partial', window=window, system=system, since=since) }}">
+  {% include 'partials/monitor_live.html' %}
+</div>
+{% endblock %}

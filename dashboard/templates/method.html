@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m with context %}
+{% block title %}Method{% endblock %}
+{% block content %}
+{% set p = cfg.proposed %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Method</p>
+    <h1>How a keyboard <em>earns a block</em></h1>
+    <p class="lede">System C collects evidence in three layers and adds it up. No single weak sign is enough, so a fast barcode scanner is flagged but never cut off.</p>
+  </div>
+</div>
+
+<section class="card">
+  <div class="card-body">
+    <svg viewBox="0 0 1100 190" role="img" aria-label="From a new device to a verdict in five steps" style="width:100%;height:auto;display:block">
+      <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#cbbd9f"/></marker></defs>
+      <g stroke="#cbbd9f" stroke-width="1.5" fill="none">
+        <path d="M150 62H218" marker-end="url(#arr)"/><path d="M372 62H440" marker-end="url(#arr)"/>
+        <path d="M594 62H662" marker-end="url(#arr)"/><path d="M816 62H884" marker-end="url(#arr)"/>
+      </g>
+      <g font-family="Source Sans 3, sans-serif" font-size="15" fill="#1c2230" text-anchor="middle">
+        <g><circle cx="76" cy="62" r="40" fill="#fffcf6" stroke="#1f3a5c" stroke-width="2"/><text x="76" y="70" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="24" fill="#1f3a5c">i</text>
+          <text x="76" y="134" font-weight="700">New device</text><text x="76" y="154" fill="#7a7466" font-size="13.5">udev event, keyboard-like</text></g>
+        <g><circle cx="296" cy="62" r="40" fill="#f4ecf2" stroke="#6c3d5e" stroke-width="2"/><text x="296" y="70" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="24" fill="#6c3d5e">ii</text>
+          <text x="296" y="134" font-weight="700">Descriptor</text><text x="296" y="154" fill="#7a7466" font-size="13.5">what it claims to be</text></g>
+        <g><circle cx="518" cy="62" r="40" fill="#e3efee" stroke="#2b6d68" stroke-width="2"/><text x="518" y="70" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="24" fill="#2b6d68">iii</text>
+          <text x="518" y="134" font-weight="700">Timing</text><text x="518" y="154" fill="#7a7466" font-size="13.5">how fast it types</text></g>
+        <g><circle cx="740" cy="62" r="40" fill="#f6e6de" stroke="#b2532f" stroke-width="2"/><text x="740" y="70" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="24" fill="#b2532f">iv</text>
+          <text x="740" y="134" font-weight="700">Content</text><text x="740" y="154" fill="#7a7466" font-size="13.5">what it types</text></g>
+        <g><circle cx="962" cy="62" r="40" fill="#f6ead0" stroke="#b07d22" stroke-width="2"/><text x="962" y="70" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="24" fill="#8c6106">v</text>
+          <text x="962" y="134" font-weight="700">Risk score</text><text x="962" y="154" fill="#7a7466" font-size="13.5">allow, alert or block</text></g>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<div class="grid g-3" style="margin-top:20px">
+  <section class="card"><div class="card-body prose">
+    <p class="layer descriptor">Descriptor layer</p>
+    <h3>What the device claims</h3>
+    <p style="margin-top:8px">Checked once at plug-in: the whitelist, known attack-board IDs, a VID:PID already used by another connected device, a storage-and-keyboard combination, and a missing serial number.</p>
+  </div></section>
+  <section class="card"><div class="card-body prose">
+    <p class="layer timing">Timing layer</p>
+    <h3>How fast it types</h3>
+    <p style="margin-top:8px">The median gap between key presses, once at least {{ p.min_keys }} keys have arrived, compared with {{ p.median_threshold_ms }} ms. Recomputed as more keys arrive. Shift and other modifier keys are ignored.</p>
+  </div></section>
+  <section class="card"><div class="card-body prose">
+    <p class="layer content">Content layer</p>
+    <h3>What it types</h3>
+    <p style="margin-top:8px">The key presses are turned back into text. Shortcuts that open a command prompt and words such as <code>{{ p.keywords[:4]|join('</code>, <code>')|safe }}</code> add points.</p>
+  </div></section>
+</div>
+
+<div class="grid g-2" style="margin-top:20px">
+  <section class="card">
+    <div class="card-head"><h3>Points per sign</h3><span class="meta">common/config.json</span></div>
+    <table class="ledger">
+      <thead><tr><th>Sign</th><th>Layer</th><th class="num">Points</th></tr></thead>
+      <tbody>
+        {% for w in weights %}<tr><td>{{ w.text }}</td><td><span class="layer {{ w.layer }}">{{ w.layer }}</span></td><td class="num pts">+{{ w.points }}</td></tr>{% endfor %}
+      </tbody>
+    </table>
+  </section>
+  <div class="grid" style="align-content:start">
+    <section class="card">
+      <div class="card-head"><h3>Verdict</h3></div>
+      <div class="card-body">
+        {{ m.meter(80) }}
+        <div class="legend" style="margin-top:6px">
+          <span><i style="background:var(--allow-bg);border-color:var(--allow-rule)"></i>Below {{ p.alert_score }}: allowed</span>
+          <span><i style="background:var(--alert-bg);border-color:var(--alert-rule)"></i>{{ p.alert_score }} to {{ p.block_score - 1 }}: alert</span>
+          <span><i style="background:var(--block-bg);border-color:var(--block-rule)"></i>{{ p.block_score }} or more: blocked</span>
+        </div>
+        <p class="note-line">Example shown: a keyboard copying a connected keyboard's ID (+30) that types faster than {{ p.median_threshold_ms }} ms a key (+50) scores 80.</p>
+      </div>
+    </section>
+    <section class="card">
+      <div class="card-head"><h3>Blocking</h3></div>
+      <div class="card-body prose">
+        <p>Keys the desktop may still see as pressed are released, then the device is grabbed so that no other program receives its keys. Real USB hardware is also switched off through its <code>authorized</code> file.</p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<h2>The three systems</h2>
+<p class="sub">All three run the same way and write to the same log, so they can be compared directly.</p>
+<section class="card">
+  <table class="ledger">
+    <thead><tr><th>System</th><th>Decides on</th><th>When</th><th>Script</th></tr></thead>
+    <tbody>
+      <tr><td>{{ m.sys('A') }} Baseline</td><td>VID:PID against the whitelist</td><td>Once, at plug-in</td><td class="mono">{{ SYSTEMS.A.path }}</td></tr>
+      <tr><td>{{ m.sys('B') }} Timing only</td><td>Median gap of the first {{ cfg.timing.min_keys }} keystrokes &lt; {{ cfg.timing.threshold_ms }} ms</td><td>Once, after {{ cfg.timing.min_keys }} keys</td><td class="mono">{{ SYSTEMS.B.path }}</td></tr>
+      <tr><td>{{ m.sys('C') }} Proposed</td><td>Descriptor, timing and content points ≥ {{ p.block_score }}</td><td>Continuously, for {{ p.watch_s }} s</td><td class="mono">{{ SYSTEMS.C.path }}</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<h2>Running it</h2>
+<p class="sub">Each command in its own terminal, from the project folder.</p>
+<div class="grid g-3">
+  <section class="card"><div class="card-body"><h3>1. A detector</h3><pre class="cmd">sudo venv/bin/python system_c_proposed/main_detector.py --enforce</pre></div></section>
+  <section class="card"><div class="card-body"><h3>2. A test device</h3><pre class="cmd">sudo venv/bin/python attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode fast</pre></div></section>
+  <section class="card"><div class="card-body"><h3>3. This dashboard</h3><pre class="cmd">venv/bin/python dashboard/app.py</pre></div></section>
+</div>
+<p class="note-line">The event database holds {{ '{:,}'.format(db.count) }} records{% if db.first %}, from {{ db.first }} to {{ db.last }}{% endif %}.</p>
+{% endblock %}

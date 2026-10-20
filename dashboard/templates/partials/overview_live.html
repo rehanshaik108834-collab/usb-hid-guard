@@ -1,0 +1,56 @@
+{% import '_macros.html' as m with context %}
+<div class="grid g-4">
+  <div class="stat"><div class="label">Devices seen</div><div class="value">{{ tally.seen }}</div><div class="note">since {{ started[11:16] }}</div></div>
+  <div class="stat allow"><div class="label">Allowed</div><div class="value">{{ tally.ALLOW }}</div><div class="note">no warning signs</div></div>
+  <div class="stat alert"><div class="label">Alerts</div><div class="value">{{ tally.ALERT }}</div><div class="note">suspicious, still working</div></div>
+  <div class="stat block"><div class="label">Blocked</div><div class="value">{{ tally.BLOCK }}</div><div class="note">keystrokes stopped</div></div>
+</div>
+
+<div class="grid g-2" style="margin-top:20px">
+  <section class="card">
+    <div class="card-head"><h3>Latest verdict</h3>{% if latest %}<span class="meta">{{ latest.started }}</span>{% endif %}</div>
+    {% if latest %}
+      {{ m.device(latest, wide=True) }}
+    {% else %}
+      <div class="empty">
+        <h3>No devices yet</h3>
+        <p>Start a detector in a terminal, then plug in or simulate a device.</p>
+        {{ m.start_hint() }}
+      </div>
+    {% endif %}
+  </section>
+
+  <div class="grid" style="align-content:start">
+    <section class="card">
+      <div class="card-head"><h3>Detectors</h3><span class="meta">checked every few seconds</span></div>
+      <ul class="feed">
+        {% for letter, s in SYSTEMS.items() %}
+          {% set r = running.get(letter) %}
+          <li style="grid-template-columns: 26px 1fr auto">
+            {{ m.sys(letter) }}
+            <span class="what">{{ s.name }} <small>{{ s.long }}</small></span>
+            {% if r %}<span class="verdict allow">{{ 'Enforcing' if r.enforce else 'Dry run' }}</span>{% else %}<span class="verdict muted">Stopped</span>{% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><h3>Recent activity</h3><a class="meta" href="{{ url_for('events') }}">Full log</a></div>
+      {% if events %}
+      <ul class="feed">
+        {% for e in events %}
+          <li>
+            <span class="t">{{ e.ts[11:] }}</span>
+            {{ m.sys(e.letter) }}
+            <span class="what">{{ e.name }}<small>{{ e.vid }}:{{ e.pid }}</small></span>
+            {{ m.verdict(e.decision) }}
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="empty">Nothing logged since the dashboard started.</p>
+      {% endif %}
+    </section>
+  </div>
+</div>

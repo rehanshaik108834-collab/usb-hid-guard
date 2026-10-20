@@ -1,0 +1,61 @@
+{% macro verdict(code, big=False) -%}
+  {%- set v = VERDICT.get(code, (code|title, 'muted')) -%}
+  <span class="verdict {{ v[1] }}{{ ' big' if big }}">{{ v[0] }}</span>
+{%- endmacro %}
+
+{% macro sys(letter) -%}
+  <span class="sys sys-{{ letter }}" title="System {{ letter }}: {{ SYSTEMS[letter].long if letter in SYSTEMS else '' }}">{{ letter }}</span>
+{%- endmacro %}
+
+{% macro meter(score) -%}
+  {%- set pos = [[score or 0, 0]|max, 100]|min -%}
+  <div class="meter" role="img" aria-label="Risk score {{ score }} out of 100">
+    <div class="meter-head"><span>Risk score</span><b>{{ score }}</b></div>
+    <div class="meter-track">
+      <span class="z allow"></span><span class="z alert"></span><span class="z block"></span>
+      <span class="needle" style="left: {{ pos }}%"></span>
+    </div>
+    <div class="meter-scale"><span style="left:0">0</span><span style="left:30%">30 alert</span><span style="left:70%">70 block</span><span style="left:100%">100</span></div>
+  </div>
+{%- endmacro %}
+
+{% macro signals(items) -%}
+  {% if items %}
+  <ul class="signals">
+    {% for s in items %}
+      <li><span class="layer {{ s.layer }}">{{ s.layer }}</span><span>{{ s.text }}</span><span class="pts">{% if s.points %}+{{ s.points }}{% endif %}</span></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="none">No warning signs.</p>
+  {% endif %}
+{%- endmacro %}
+
+{% macro device(s, wide=False) -%}
+  <div class="device">
+    <div class="device-top">
+      <div class="device-title">
+        {{ sys(s.letter) }}
+        <div>
+          <div class="device-name">{{ s.name }}</div>
+          <div class="device-meta"><span class="idtag">{{ s.vid }}:{{ s.pid }}</span><span>{{ s.started[11:] }}</span><span>{{ SYSTEMS[s.letter].name if s.letter in SYSTEMS }}</span></div>
+        </div>
+      </div>
+      {{ verdict(s.state, big=wide) }}
+    </div>
+    {% if s.letter == 'C' and s.score is not none %}{{ meter(s.score) }}{% endif %}
+    {{ signals(s.signals) }}
+    {% if s.keys is not none or s.latency_ms is not none or s.median_ms is not none %}
+    <dl class="facts">
+      <div><dt>Keys seen</dt><dd>{{ s.keys if s.keys is not none else '—' }}</dd></div>
+      <div><dt>Median gap</dt><dd>{% if s.median_ms is not none %}{{ '%.1f'|format(s.median_ms) }} <small>ms</small>{% else %}—{% endif %}</dd></div>
+      <div><dt>Block after</dt><dd>{% if s.latency_ms is not none %}{{ s.latency_ms }} <small>ms</small>{% else %}—{% endif %}</dd></div>
+      <div><dt>Keys leaked</dt><dd>{{ s.leaked if s.leaked is not none else '—' }}</dd></div>
+    </dl>
+    {% endif %}
+  </div>
+{%- endmacro %}
+
+{% macro start_hint() -%}
+  <pre class="cmd">sudo venv/bin/python system_c_proposed/main_detector.py --enforce</pre>
+{%- endmacro %}

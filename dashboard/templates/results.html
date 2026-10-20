@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m with context %}
+{% block title %}Results{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Results</p>
+    <h1>Three systems, <em>the same attacks</em></h1>
+    <p class="lede">The identity whitelist (A), timing alone (B) and the proposed multi-signal detector (C) were each run through the same scenarios.{% if exp %} {{ exp.runs }} runs in total, read from <code>experiments/results.csv</code>.{% endif %}</p>
+  </div>
+</div>
+
+{% if not exp %}
+<section class="card"><div class="empty"><h3>No experiment results yet</h3><pre class="cmd">sudo venv/bin/python experiments/run_experiments.py --runs 20 --fresh</pre></div></section>
+{% else %}
+{% set S = exp.summary %}
+<div class="grid g-2-even">
+  {% set metrics = [
+      ('Attack runs blocked', 'Higher is better', 'blocked_pct', 100, '%'),
+      ('Attack runs blocked or alerted', 'Higher is better', 'flagged_pct', 100, '%'),
+      ('Legitimate runs wrongly blocked', 'Lower is better', 'fp_pct', 100, '%'),
+      ('Keystrokes leaked per attack run', 'Lower is better: mean over all attack runs', 'leaked', 60, '')] %}
+  {% for title, q, key, top, unit in metrics %}
+  <section class="card compare"><div class="card-body">
+    <h3>{{ title }}</h3><p class="q">{{ q }}</p>
+    {% for letter in SYSTEMS if letter in S %}
+      {% set v = S[letter][key] %}
+      <div class="bar-row">{{ m.sys(letter) }}<div class="bar {{ letter }}"><span style="width: {{ [100 * v / top, 100]|min }}%"></span></div><span class="v">{{ '%.0f'|format(v) if unit else '%.1f'|format(v) }}{{ unit }}</span></div>
+    {% endfor %}
+  </div></section>
+  {% endfor %}
+</div>
+
+<h2>Scenario by scenario</h2>
+<p class="sub">Each cell is the outcome over all runs of that scenario. Green is the right result, amber is an alert without a block, red is a miss or a wrong block.</p>
+<section class="card">
+  <div class="table-scroll">
+    <table class="ledger">
+      <thead><tr><th>Scenario</th><th>Should be</th>{% for letter, s in SYSTEMS.items() %}<th>{{ m.sys(letter) }} {{ s.name }}</th>{% endfor %}</tr></thead>
+      <tbody>
+        {% for row in exp.matrix %}
+        <tr>
+          <td><b>{{ row.id }}</b> · {{ row.name }}</td>
+          <td><span class="expect {{ row.expected }}">{{ 'Stopped' if row.expected == 'attack' else 'Allowed' }}</span></td>
+          {% for letter in SYSTEMS %}
+            {% set c = row.cells[letter] %}
+            <td style="min-width:150px">{% if c %}<div class="cell {{ c.grade }}"><b>{{ c.label }}</b><small>{{ c.n }} runs{{ ' · ' ~ c.note if c.note }}</small></div>{% endif %}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<h2>Figures</h2>
+<p class="sub">Drawn by <code>experiments/make_graphs.py</code> and <code>analyze_traces.py</code> from the same data.</p>
+<div class="grid g-2-even">
+  {% for file, title, caption in figures %}
+  <figure class="plate" {% if loop.last %}style="grid-column: 1 / -1"{% endif %}>
+    <img src="{{ url_for('figure', name=file) }}" alt="{{ title }}" loading="lazy">
+    <figcaption><b>Figure {{ loop.index }}.</b>{{ caption }}</figcaption>
+  </figure>
+  {% endfor %}
+</div>
+
+<div class="grid g-2-even" style="margin-top:36px">
+  {% if typing %}
+  <section class="card">
+    <div class="card-head"><h3>Human typing data</h3><span class="meta">attack_sim/human_traces</span></div>
+    <div class="card-body">
+      <dl class="facts" style="grid-template-columns: repeat(3, 1fr); margin-top:0">
+        <div><dt>People</dt><dd>{{ typing.people }}</dd></div>
+        <div><dt>Recordings</dt><dd>{{ typing.recordings }}</dd></div>
+        <div><dt>Keystroke gaps</dt><dd>{{ '{:,}'.format(typing.gaps) }}</dd></div>
+      </dl>
+      <dl class="facts" style="grid-template-columns: repeat(3, 1fr)">
+        <div><dt>Human median</dt><dd>{{ '%.0f'|format(typing.median) }} <small>ms</small></dd></div>
+        <div><dt>Attack median</dt><dd>{% if typing.attack_median %}{{ '%.1f'|format(typing.attack_median) }} <small>ms</small>{% else %}—{% endif %}</dd></div>
+        <div><dt>Threshold</dt><dd>{{ typing.threshold }} <small>ms</small></dd></div>
+      </dl>
+      <p class="note-line">{{ '%.1f'|format(typing.under20) }}% of human gaps were under 20 ms, when two keys were pressed almost together. The detectors use the median gap, which these single gaps do not move.</p>
+    </div>
+  </section>
+  {% endif %}
+  {% if exp.overhead %}
+  <section class="card">
+    <div class="card-head"><h3>Resource use</h3><span class="meta">whole experiment, idle time included</span></div>
+    <table class="ledger">
+      <thead><tr><th>System</th><th class="num">CPU time</th><th class="num">Average CPU</th><th class="num">Peak memory</th></tr></thead>
+      <tbody>
+        {% for letter, s in SYSTEMS.items() if letter in exp.overhead %}
+          {% set o = exp.overhead[letter] %}
+          <tr><td>{{ m.sys(letter) }} {{ s.name }}</td><td class="num">{{ o.cpu_seconds }} s</td><td class="num">{{ o.avg_cpu_percent }}%</td><td class="num">{{ o.rss_mb }} MB</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m with context %}
+{% block title %}Overview{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Overview</p>
+    <h1>Every new keyboard, <em>judged by what it does</em></h1>
+    <p class="lede">A keyboard can claim any identity. HID Guard also watches how fast it types and what it types, and blocks it when the evidence adds up.</p>
+  </div>
+  <span class="live"><i></i>Live · <span data-updated>{{ now }}</span></span>
+</div>
+
+<div data-live="{{ url_for('overview_partial') }}">
+  {% include 'partials/overview_live.html' %}
+</div>
+
+{% if exp and exp.summary.C and exp.summary.A and exp.summary.B %}
+<h2>From the experiment</h2>
+<p class="sub">{{ exp.runs }} automated runs over {{ exp.scenarios }} scenarios. <a href="{{ url_for('results') }}">See all results</a></p>
+<div class="kpi-band">
+  <div>
+    <div class="big">{{ '%.0f'|format(exp.summary.C.blocked_pct) }}<small>%</small></div>
+    <p>of attack runs blocked by the proposed system, against {{ '%.0f'|format(exp.summary.A.blocked_pct) }}% for the identity whitelist.</p>
+  </div>
+  <div>
+    <div class="big">{{ '%.0f'|format(exp.summary.C.flagged_pct) }}<small>%</small></div>
+    <p>of attack runs blocked or alerted by the proposed system.</p>
+  </div>
+  <div>
+    <div class="big">{{ exp.summary.C.false_blocks }}</div>
+    <p>legitimate devices wrongly blocked by the proposed system, against {{ exp.summary.B.false_blocks }} of {{ exp.summary.B.legit }} for timing alone.</p>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Overview{% endblock %} · HID Guard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="masthead">
+    <div class="wrap">
+      <a class="brand" href="{{ url_for('overview') }}">
+        <svg class="seal" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22.5" fill="#fffcf6" stroke="#1f3a5c" stroke-width="2"/>
+          <circle cx="24" cy="24" r="18.5" fill="none" stroke="#b07d22" stroke-width="1"/>
+          <text x="24" y="30" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-weight="600" font-size="17" fill="#1f3a5c">hg</text>
+        </svg>
+        <span>
+          <div class="brand-name">HID <em>Guard</em></div>
+          <div class="brand-tag">USB security monitoring · behavioural detection</div>
+        </span>
+      </a>
+      <div class="status-strip" aria-label="Detectors">
+        {% for letter, s in SYSTEMS.items() %}
+          {% set r = running.get(letter) %}
+          <span class="det {{ 'on' if r }}" title="{{ s.long }}">
+            <span class="sys sys-{{ letter }}">{{ letter }}</span>
+            <span class="dot"></span>
+            {% if r %}running{% if not r.enforce %} <small>(dry run)</small>{% endif %}{% else %}<small>stopped</small>{% endif %}
+          </span>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+  <nav class="tabs">
+    <div class="wrap">
+      {% set items = [('overview', 'Overview', 'i'), ('monitor', 'Live monitor', 'ii'), ('events', 'Event log', 'iii'), ('results', 'Results', 'iv'), ('method', 'Method', 'v')] %}
+      {% for ep, label, num in items %}
+        <a href="{{ url_for(ep) }}" class="{{ 'active' if request.endpoint == ep }}"><span class="num">{{ num }}.</span>{{ label }}</a>
+      {% endfor %}
+    </div>
+  </nav>
+  <main>
+    <div class="wrap">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <span class="sig">HID Guard: an application-based project on USB keystroke-injection detection.</span>
+      <span>Read-only view of <code>logs/events.db</code> and <code>experiments/</code> · page loaded {{ now }}</span>
+    </div>
+  </footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

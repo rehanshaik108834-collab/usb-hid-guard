@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m with context %}
+{% block title %}Event log{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <p class="eyebrow">Event log</p>
+    <h1>Every decision, <em>with its reasons</em></h1>
+    <p class="lede">The same records the detectors write to <code>logs/events.db</code>, newest first. Filter by system, decision or device.</p>
+  </div>
+</div>
+
+<form class="toolbar" method="get" action="{{ url_for('events') }}">
+  <select name="system" aria-label="System">
+    <option value="">All systems</option>
+    {% for letter, s in SYSTEMS.items() %}<option value="{{ letter }}" {{ 'selected' if system == letter }}>{{ letter }} · {{ s.name }}</option>{% endfor %}
+  </select>
+  <select name="decision" aria-label="Decision">
+    <option value="">All decisions</option>
+    {% for d in decisions %}<option value="{{ d }}" {{ 'selected' if decision == d }}>{{ VERDICT[d][0] if d in VERDICT else d }}</option>{% endfor %}
+  </select>
+  <select name="window" aria-label="Time">
+    {% for key, label in WINDOWS.items() %}<option value="{{ key }}" {{ 'selected' if window == key }}>{{ label }}</option>{% endfor %}
+  </select>
+  <input type="search" name="q" value="{{ q }}" placeholder="Device name, VID:PID or reason">
+  <button class="btn" type="submit">Filter</button>
+  {% if system or decision or q or window != 'all' %}<a class="btn ghost" href="{{ url_for('events') }}">Reset</a>{% endif %}
+</form>
+
+<section class="card">
+  <div class="card-head"><h3>{{ '{:,}'.format(total) }} event{{ '' if total == 1 else 's' }}</h3><span class="meta">page {{ page }} of {{ pages }}</span></div>
+  {% if rows %}
+  <div class="table-scroll">
+    <table class="ledger">
+      <thead><tr><th>Time</th><th>System</th><th>Device</th><th>VID:PID</th><th>Decision</th><th>Details</th></tr></thead>
+      <tbody>
+        {% for e in rows %}
+        <tr>
+          <td class="mono" style="white-space:nowrap">{{ e.ts[5:] }}</td>
+          <td>{{ m.sys(e.letter) }}</td>
+          <td>{{ e.name }}</td>
+          <td><span class="idtag">{{ e.vid }}:{{ e.pid }}</span></td>
+          <td>{{ m.verdict(e.decision) }}</td>
+          <td class="reason">{{ e.reason }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% set args = {'system': system, 'decision': decision, 'q': q, 'window': window} %}
+  <div class="pager">
+    {% if page > 1 %}<a class="btn ghost" href="{{ url_for('events', page=page-1, **args) }}">Newer</a>{% endif %}
+    <span>{{ (page-1)*50 + 1 }}–{{ [page*50, total]|min }} of {{ '{:,}'.format(total) }}</span>
+    {% if page < pages %}<a class="btn ghost" href="{{ url_for('events', page=page+1, **args) }}">Older</a>{% endif %}
+  </div>
+  {% else %}
+  <p class="empty">No events match these filters.</p>
+  {% endif %}
+</section>
+{% endblock %}
