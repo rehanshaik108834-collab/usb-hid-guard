@@ -61,8 +61,7 @@ def watch_device(node, cfg, enforce):
             return
 
         try:
-            queued = grab_releasing_keys(dev)
-            t_block = time.time()
+            queued, t_block = grab_releasing_keys(dev)
         except OSError as err:
             log_event(SYSTEM, "input", name, vid, pid, "ERROR", f"grab failed: {err}")
             return

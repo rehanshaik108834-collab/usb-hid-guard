@@ -40,15 +40,15 @@ def drain(dev, seconds):
 
 
 def block_device(dev, usb_parent):
-    """Returns key events that were still queued when the grab happened."""
-    queued = grab_releasing_keys(dev)  # keystrokes stop reaching the system, no key left stuck
+    """Returns (key events still queued at the grab, block time)."""
+    queued, t_block = grab_releasing_keys(dev)  # keystrokes stop reaching the system, no key left stuck
     if usb_parent is not None:  # real USB hardware: also deauthorize it
         try:
             with open(os.path.join(usb_parent.sys_path, "authorized"), "w") as f:
                 f.write("0")
         except OSError:
             pass
-    return queued
+    return queued, t_block
 
 
 def watch_device(node, udev_dev, cfg, whitelist, enforce):
@@ -89,8 +89,7 @@ def watch_device(node, udev_dev, cfg, whitelist, enforce):
                 log_event(SYSTEM, "input", name, vid, pid, "WOULD-BLOCK", summary + " (dry run)")
                 return
             try:
-                queued = block_device(dev, usb_parent)
-                t_block = time.time()
+                queued, t_block = block_device(dev, usb_parent)
             except OSError as err:
                 log_event(SYSTEM, "input", name, vid, pid, "ERROR", f"grab failed: {err}")
                 return

@@ -24,25 +24,34 @@ def _read_queued(dev):
     return out
 
 
+def _release(dev, held):
+    for code in held:
+        dev.write(e.EV_KEY, code, 0)
+    if held:
+        dev.syn()
+
+
 def grab_releasing_keys(dev, tries=3):
-    """Grab the device so its keys stop reaching the system.
-    A key that is held down at that moment would never get its key-up through the grab, so the
-    desktop would keep repeating it. Release such keys: briefly ungrab, inject key-ups, grab again.
+    """Grab the device so its keys stop reaching the system. Returns (queued events, block time).
+    A key held down at the moment of the grab would never get its key-up through, so the desktop
+    would keep repeating it. So held keys are released (key-up injected) just BEFORE the grab.
     Asking the kernel which keys are held throws away key events still queued for us, so those
     are read first and returned; the caller must count them (they reached the system)."""
+    queued = _read_queued(dev)
+    _release(dev, dev.active_keys())
     dev.grab()
-    queued = []
+    t_block = time.time()
+    # Rare: a key pressed in the instant between the release and the grab is still held.
     for _ in range(tries):
         queued += _read_queued(dev)
         held = dev.active_keys()
         if not held:
             break
-        dev.ungrab()
-        for code in held:
-            dev.write(e.EV_KEY, code, 0)
-        dev.syn()
+        dev.ungrab()  # the device is open again for a moment, so the block time moves too
+        _release(dev, held)
         dev.grab()
-    return queued
+        t_block = time.time()
+    return queued, t_block
 
 
 def hexid(number):
