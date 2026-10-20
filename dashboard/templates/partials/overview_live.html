@@ -1,7 +1,7 @@
 {% import '_macros.html' as m with context %}
 <div class="grid g-4">
   <div class="stat"><div class="label">Devices seen</div><div class="value">{{ tally.seen }}</div><div class="note">{% if window == 'session' %}since {{ started[11:16] }}{% else %}{{ WINDOWS[window]|lower }}{% endif %}</div></div>
-  <div class="stat allow"><div class="label">Allowed</div><div class="value">{{ tally.ALLOW }}</div><div class="note">no warning signs</div></div>
+  <div class="stat allow"><div class="label">Allowed</div><div class="value">{{ tally.ALLOW }}</div><div class="note">working normally</div></div>
   <div class="stat alert"><div class="label">Alerts</div><div class="value">{{ tally.ALERT }}</div><div class="note">suspicious, still working</div></div>
   <div class="stat block"><div class="label">Blocked</div><div class="value">{{ tally.BLOCK }}</div><div class="note">keystrokes stopped</div></div>
 </div>

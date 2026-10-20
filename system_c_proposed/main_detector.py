@@ -48,22 +48,28 @@ def drain(dev, seconds):
     return out
 
 
-def switch_off(usb_parent):
-    """Real USB hardware: deauthorize it, so the device is disconnected from its drivers."""
-    if usb_parent is not None:
-        try:
-            with open(os.path.join(usb_parent.sys_path, "authorized"), "w") as f:
-                f.write("0")
-        except OSError:
-            pass
+def switch_off(usb_parent, name=None, vid=None, pid=None):
+    """Real USB hardware: deauthorize it, so the device is disconnected from its drivers.
+    With a name, the outcome is logged (software-made devices have no USB parent: nothing to log)."""
+    if usb_parent is None:
+        return
+    try:
+        with open(os.path.join(usb_parent.sys_path, "authorized"), "w") as f:
+            f.write("0")
+        if name:
+            log_event(SYSTEM, "usb", name, vid, pid, "INFO",
+                      f"USB device {usb_parent.sys_name} switched off (authorized = 0)")
+    except OSError as err:
+        if name:
+            log_event(SYSTEM, "usb", name, vid, pid, "ERROR", f"could not switch off USB device: {err}")
 
 
-def block_device(dev, usb_parent, deauthorize=True):
+def block_device(dev, usb_parent, deauthorize=True, who=()):
     """Returns (key events still queued at the grab, block time). A held device is grabbed but
     not deauthorized, so its keys can still be read for the code check."""
     queued, t_block = grab_releasing_keys(dev)  # keystrokes stop reaching the system, no key left stuck
     if deauthorize:
-        switch_off(usb_parent)
+        switch_off(usb_parent, *who)
     return queued, t_block
 
 
@@ -138,7 +144,7 @@ def watch_device(node, udev_dev, cfg, whitelist, enforce):
                 log_event(SYSTEM, "input", name, vid, pid, "WOULD-BLOCK", summary + f" (dry run{note})")
                 return
             try:
-                queued, t_block = block_device(dev, usb_parent, deauthorize=proof)
+                queued, t_block = block_device(dev, usb_parent, deauthorize=proof, who=(name, vid, pid))
             except OSError as err:
                 log_event(SYSTEM, "input", name, vid, pid, "ERROR", f"grab failed: {err}")
                 return
@@ -163,7 +169,7 @@ def watch_device(node, udev_dev, cfg, whitelist, enforce):
                 return  # a person answered: the keyboard is trusted from now on
             why = "device removed" if gone else f"no answer within {ch['timeout_s']} s"
             log_event(SYSTEM, "input", name, vid, pid, "BLOCK", summary + f" (challenge failed: {why})")
-            switch_off(usb_parent)
+            switch_off(usb_parent, name, vid, pid)
             if not gone:
                 wait_until_unplugged(dev)
             return

@@ -51,7 +51,7 @@
     {% elif s.challenge_result == 'passed' %}
       <p class="challenge-note pass">Held for a code check: the code was typed on the keyboard, so it was unlocked.</p>
     {% elif s.challenge_result == 'failed' %}
-      <p class="challenge-note fail">Held for a code check: no code was typed, so it stays blocked.</p>
+      <p class="challenge-note fail">Held for a code check: no code was typed, so it stays blocked{% if s.switched_off %} and the USB device was switched off{% endif %}.</p>
     {% endif %}
     {% if s.letter == 'C' and s.score is not none %}{{ meter(s.score) }}{% endif %}
     {{ signals(s.signals) }}
@@ -59,7 +59,7 @@
     <dl class="facts">
       <div><dt>Keys seen</dt><dd>{{ s.nkeys if s.nkeys is not none else '—' }}</dd></div>
       <div><dt>Median gap</dt><dd>{% if s.median_ms is not none %}{{ '%.1f'|format(s.median_ms) }} <small>ms</small>{% else %}—{% endif %}</dd></div>
-      <div><dt>Block after</dt><dd>{% if s.latency_ms is not none %}{{ s.latency_ms }} <small>ms</small>{% else %}—{% endif %}</dd></div>
+      <div><dt>{{ "Held after" if s.challenge else "Block after" }}</dt><dd>{% if s.latency_ms is not none %}{{ s.latency_ms }} <small>ms</small>{% else %}—{% endif %}</dd></div>
       <div><dt>Keys leaked</dt><dd>{{ s.leaked if s.leaked is not none else '—' }}</dd></div>
     </dl>
     {% endif %}

@@ -158,16 +158,38 @@ def build_sessions(rows_ascending):
             s["signals"] = parse_signals("C", e["reason"])
             s["score"] = s["descriptor_score"]
         elif d == "INFO" and s is not None:
-            if "at plug-in" in (e["reason"] or ""):
-                s["latency_ms"] = 0
-            else:
-                s["latency_ms"] = _num(r"block latency (\d+) ms", e["reason"], int)
-            s["leaked"] = _num(r"(\d+) (?:of \d+ )?key presses leaked", e["reason"], int)
+            # Only the block-latency line carries these numbers; other INFO lines (e.g. the USB
+            # switch-off) must not wipe them.
+            latency = 0 if "at plug-in" in (e["reason"] or "") else _num(r"block latency (\d+) ms", e["reason"], int)
+            leaked = _num(r"(\d+) (?:of \d+ )?key presses leaked", e["reason"], int)
+            if latency is not None:
+                s["latency_ms"] = latency
+            if leaked is not None:
+                s["leaked"] = leaked
+            if "switched off" in (e["reason"] or ""):
+                s["switched_off"] = True
     for s in sessions:
         if s.get("held") and s["decision"]:
             s["challenge_result"] = "passed" if s["decision"] == "ALLOW" else "failed"
         s["state"] = s["decision"] or ("CHALLENGE" if s.get("held") else "WATCHING")
-    return list(reversed(sessions))
+    return list(reversed(_drop_idle_siblings(sessions)))
+
+
+def _drop_idle_siblings(sessions):
+    """A real keyboard shows up as several input devices with the same VID:PID at the same moment
+    (e.g. 'Receiver' and 'Receiver Keyboard'); usually only one of them types. Hide a sibling that saw
+    no keys when another part of the same device, plugged in within 3 seconds, did something."""
+    def t(s):
+        return time.mktime(time.strptime(s["started"], "%Y-%m-%d %H:%M:%S"))
+    active = [s for s in sessions if s["state"] != "NO-DATA"]
+    keep = []
+    for s in sessions:
+        if s["state"] == "NO-DATA" and any(
+                o["letter"] == s["letter"] and o["vid"] == s["vid"] and o["pid"] == s["pid"]
+                and o["name"] != s["name"] and abs(t(o) - t(s)) <= 3 for o in active):
+            continue
+        keep.append(s)
+    return keep
 
 
 def live_sessions(window="session", since=None, system=None, latest=False):

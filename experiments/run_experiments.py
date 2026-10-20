@@ -115,7 +115,10 @@ def parse_log(text):
             if lk:
                 leaked = int(lk.group(1))
             lt = re.search(r"block latency (\d+) ms", line)
-            latency = int(lt.group(1)) if lt else (0 if "at plug-in" in line else "")
+            if lt:
+                latency = int(lt.group(1))
+            elif "at plug-in" in line:
+                latency = 0
     return decision, score, leaked, latency
 
 
