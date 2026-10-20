@@ -1,6 +1,6 @@
 #!/bin/bash
-# Usage: ./record_friend.sh 1      (records friend1: 2 normal + 2 fast runs)
-if [ -z "$1" ]; then echo "Usage: ./record_friend.sh NUMBER"; exit 1; fi
+# Usage: ./tools/record_friend.sh 1      (records friend1: 2 normal + 2 fast runs)
+if [ -z "$1" ]; then echo "Usage: ./tools/record_friend.sh NUMBER"; exit 1; fi
 cd ~/usb-hid-guard || exit 1
 sudo -v
 for kind in normal normal fast fast; do

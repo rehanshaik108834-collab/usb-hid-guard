@@ -7,7 +7,7 @@
 # Before starting: open Text Editor, and a browser on http://127.0.0.1:5000 -> Live monitor.
 # Each act starts ONE detector with --enforce, plugs in a simulated keyboard that types into
 # whatever window has focus, prints the detector's decision, then stops the detector.
-# Press Enter to run an act; while it types, keep the Text Editor focused and do not touch the keyboard.
+# Press Enter to run an act, then click inside the Text Editor; do not touch the keyboard while it types.
 
 cd "$(dirname "$0")/.." || exit 1
 PY=venv/bin/python
@@ -29,7 +29,10 @@ if ! pgrep -f dashboard/app.py >/dev/null; then
   DASH=$!
   echo "Dashboard started on http://127.0.0.1:5000"
 fi
-cleanup() { sudo pkill -f -- "--enforce" 2>/dev/null; [ -n "$DASH" ] && kill "$DASH" 2>/dev/null; }
+# Stop processes whose command line contains $1. The first character goes in brackets so the
+# pattern does not match the "sudo pkill ..." command line itself (which also contains $1).
+stop() { sudo pkill -f -- "[${1:0:1}]${1:1}" 2>/dev/null; sleep 0.5; }
+cleanup() { stop "--enforce"; [ -n "$DASH" ] && kill "$DASH" 2>/dev/null; }
 trap cleanup EXIT
 
 # act NUMBER DETECTOR TITLE -- device arguments...
@@ -37,14 +40,15 @@ act() {
   local n=$1 det=$2 title=$3; shift 4
   [ "$n" -lt "$START" ] && return
   bold "Act $n: $title"
-  read -rp "  Click inside Text Editor, then press Enter here... " _
-  sudo pkill -f -- "--enforce" 2>/dev/null
+  read -rp "  Press Enter, then click inside the Text Editor (typing starts in about 6 s)... " _
+  sudo -v || return
+  stop "--enforce"
   : > "$LOG"
   sudo $PY -u "$det" --enforce >> "$LOG" 2>&1 &
   sleep 3
   sudo $PY "$@" --wait 3
   sleep 3
-  sudo pkill -f -- "$det" 2>/dev/null
+  stop "$det"
   echo "  Detector said:"
   grep -E -- "-> (ALLOW|ALERT|BLOCK|WOULD-BLOCK|INFO|NO-DATA)" "$LOG" | sed 's/^/    /'
 }

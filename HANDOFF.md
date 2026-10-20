@@ -33,6 +33,11 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
 - Viva demo: `demo/viva_demo.sh` (Linux VM). 10 acts: A blocks unknown / misses spoof, B blocks fast /
   misses slow / blocks scanner, C blocks fast / slow shell / Digispark, alerts scanner, allows a human.
   Start from an act with `./demo/viva_demo.sh 6`. Not yet run in the VM.
+- Submission audit (2026-10-20, VM): all code compiles, all dashboard pages render with numbers matching
+  the report. Fixed in the demo script: not executable, `sudo pkill` could match its own command line,
+  focus prompt in the wrong order. Added README.md, requirements.txt, experiments/raw_logs/README.md;
+  moved superseded logs and backup results into raw_logs/superseded/ and experiments/history/, helpers
+  into tools/. Report 6.1 table now lists the dashboard and the demo script.
 
 ## Still to do
 1. Report cover: names and course (ICS) are in; replace the placeholder roll numbers (S2024001XXXX) and
