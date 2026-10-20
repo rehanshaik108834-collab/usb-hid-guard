@@ -16,6 +16,8 @@ IMPORTANT: Open the 'Text Editor' app and click inside it before the countdown
 ends. The text will be typed there. Never point this at anything but a text editor.
 """
 import argparse
+import json
+import os
 import random
 import time
 
@@ -66,7 +68,8 @@ def press(ui, code, hold):
 
 
 def type_text(ui, text, mode):
-    delays = []
+    """Returns (planned delays, actual key-down times)."""
+    delays, times = [], []
     for ch in text:
         if ch not in KEYMAP:
             continue
@@ -76,13 +79,14 @@ def type_text(ui, text, mode):
         if shift:
             ui.write(e.EV_KEY, e.KEY_LEFTSHIFT, 1)
             ui.syn()
+        times.append(time.time())
         press(ui, code, hold)
         if shift:
             ui.write(e.EV_KEY, e.KEY_LEFTSHIFT, 0)
             ui.syn()
         time.sleep(max(0, delay - hold))
         delays.append(delay)
-    return delays
+    return delays, times
 
 
 def main():
@@ -96,6 +100,7 @@ def main():
     p.add_argument("--launcher", choices=["none", "win-r"], default="none",
                    help="press a launcher shortcut before typing")
     p.add_argument("--wait", type=int, default=6, help="seconds before typing starts")
+    p.add_argument("--save-gaps", help="save the measured gaps between key presses to this JSON file")
     args = p.parse_args()
 
     text = args.text if args.text else PAYLOADS[args.payload]
@@ -114,10 +119,15 @@ def main():
         ui.write(e.EV_KEY, e.KEY_LEFTMETA, 0)
         ui.syn()
         time.sleep(0.5)  # attack scripts wait for the Run dialog to open
-    delays = type_text(ui, text, args.mode)
+    delays, times = type_text(ui, text, args.mode)
     total = time.time() - start
     avg_ms = 1000 * sum(delays) / max(1, len(delays))
     print(f"Typed {len(delays)} characters in {total:.2f}s (average gap {avg_ms:.1f} ms)")
+    if args.save_gaps:
+        gaps = [round(b - a, 6) for a, b in zip(times, times[1:])]
+        os.makedirs(os.path.dirname(os.path.abspath(args.save_gaps)), exist_ok=True)
+        with open(args.save_gaps, "w") as f:
+            json.dump({"name": args.name, "mode": args.mode, "gaps": gaps}, f)
     time.sleep(1)
     ui.close()
     print("Device removed.")

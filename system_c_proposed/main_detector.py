@@ -19,7 +19,7 @@ import pyudev
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, BASE)
-from common.device_info import hexid, read_input_device  # noqa: E402
+from common.device_info import grab_releasing_keys, hexid, read_input_device  # noqa: E402
 from common.keystrokes import MODIFIERS, is_keyboard_like, read_all_events  # noqa: E402
 from common.logger import log_event  # noqa: E402
 from content_analyzer import ContentAnalyzer  # noqa: E402
@@ -40,13 +40,15 @@ def drain(dev, seconds):
 
 
 def block_device(dev, usb_parent):
-    dev.grab()  # keystrokes stop reaching the system
+    """Returns key events that were still queued when the grab happened."""
+    queued = grab_releasing_keys(dev)  # keystrokes stop reaching the system, no key left stuck
     if usb_parent is not None:  # real USB hardware: also deauthorize it
         try:
             with open(os.path.join(usb_parent.sys_path, "authorized"), "w") as f:
                 f.write("0")
         except OSError:
             pass
+    return queued
 
 
 def watch_device(node, udev_dev, cfg, whitelist, enforce):
@@ -87,14 +89,14 @@ def watch_device(node, udev_dev, cfg, whitelist, enforce):
                 log_event(SYSTEM, "input", name, vid, pid, "WOULD-BLOCK", summary + " (dry run)")
                 return
             try:
-                block_device(dev, usb_parent)
+                queued = block_device(dev, usb_parent)
                 t_block = time.time()
             except OSError as err:
                 log_event(SYSTEM, "input", name, vid, pid, "ERROR", f"grab failed: {err}")
                 return
             log_event(SYSTEM, "input", name, vid, pid, "BLOCK", summary + " (grabbed)")
             later = drain(dev, 1.5)
-            extra = [ts for ts, code, val in later if val == 1 and code not in MODIFIERS]
+            extra = [ts for ts, code, val in queued + later if val == 1 and code not in MODIFIERS]
             leaked = sum(1 for ts in times + extra if ts <= t_block)
             latency = f"{(t_block - times[0]) * 1000:.0f} ms from first key" if times else "at plug-in, before any key"
             log_event(SYSTEM, "input", name, vid, pid, "INFO",

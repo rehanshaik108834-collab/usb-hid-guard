@@ -19,6 +19,13 @@ def _sim_overrides(name):
         return {}
 
 
+def _physical_device(phys):
+    """'usb-0000:00:06.0-1/input1' -> 'usb-0000:00:06.0-1'. One real USB keyboard often shows up as
+    several input devices (keys, media keys...) with the same VID:PID and this same prefix.
+    Software-made devices have no phys, so they return ''."""
+    return phys.rsplit("/input", 1)[0] if phys else ""
+
+
 def _read(path):
     try:
         with open(path) as f:
@@ -42,7 +49,9 @@ def analyze_descriptor(udev_dev, dev, node, whitelist, pc):
         points += w["attack_board_id"]
         reasons.append(f"VID:PID {ident} matches a known attack board (+{w['attack_board_id']})")
 
-    # Identity collision: another device that is ALREADY connected has the same VID:PID.
+    # Identity collision: another device that is ALREADY connected has the same VID:PID
+    # (parts of the same physical device, e.g. a keyboard's media-key interface, do not count).
+    me = _physical_device(dev.phys)
     for path in list_devices():
         if path == node:
             continue
@@ -51,9 +60,10 @@ def analyze_descriptor(udev_dev, dev, node, whitelist, pc):
         except OSError:
             continue
         same = (other.info.vendor, other.info.product) == (dev.info.vendor, dev.info.product)
+        sibling = bool(me) and _physical_device(other.phys) == me
         other_name = other.name
         other.close()
-        if same:
+        if same and not sibling:
             points += w["id_collision"]
             reasons.append(f"VID:PID {ident} already used by connected device '{other_name}' (+{w['id_collision']})")
             break

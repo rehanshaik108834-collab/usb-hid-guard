@@ -6,6 +6,10 @@ Examples:
   sudo venv/bin/python experiments/run_experiments.py --runs 20 --fresh    # full experiment
   sudo venv/bin/python experiments/run_experiments.py --runs 5 --systems C --scenarios S3,S8
 
+--runs applies to the simulated devices. Human-replay scenarios (S1, S6, S10) always replay
+every matching recording exactly once, so no volunteer's typing is left out.
+The measured key timing of every simulated device is saved in attack_sim/attack_traces/.
+
 Before starting: stop every other detector, open a Text Editor, and be ready to click inside it
 when the countdown runs. All typed text is harmless and goes to the focused window.
 Do not touch the keyboard or mouse while it runs.
@@ -29,6 +33,7 @@ RAW = os.path.join(BASE, "experiments", "raw_logs")
 TRACES = os.path.join(BASE, "attack_sim", "human_traces")
 FAKE = os.path.join(BASE, "attack_sim", "fake_keyboard.py")
 REPLAY = os.path.join(BASE, "attack_sim", "replay_trace.py")
+ATTACK_TRACES = os.path.join(BASE, "attack_sim", "attack_traces")
 SETTLE = 3.0  # seconds to let detectors finish logging after each run
 
 SYSTEMS = {
@@ -44,20 +49,25 @@ def traces(pattern):
 
 
 def fake(name, vid, pid, mode, payload="hello", text=None, launcher="none"):
-    def build(i):
+    def build(i, tag):
         cmd = [PY, FAKE, "--name", name, "--vid", vid, "--pid", pid, "--mode", mode, "--wait", "1",
-               "--launcher", launcher]
+               "--launcher", launcher, "--save-gaps", os.path.join(ATTACK_TRACES, f"{tag}.json")]
         cmd += ["--text", text] if text else ["--payload", payload]
         return cmd, ""
     return build
 
 
 def replay(name, vid, pid, pattern):
-    def build(i):
+    def build(i, tag):
         files = traces(pattern)
         f = files[i % len(files)]
         return [PY, REPLAY, "--trace", f, "--name", name, "--vid", vid, "--pid", pid, "--wait", "1"], os.path.basename(f)
+    build.count = lambda: len(traces(pattern))  # one run per recording
     return build
+
+
+def runs_for(build, runs):
+    return build.count() if hasattr(build, "count") else runs
 
 
 SCENARIOS = {
@@ -128,8 +138,9 @@ def main():
     systems = [s.strip().upper() for s in args.systems.split(",")]
     scen_ids = [s.strip().upper() for s in args.scenarios.split(",")]
 
-    total = len(systems) * len(scen_ids) * args.runs
-    print(f"Plan: {len(systems)} systems x {len(scen_ids)} scenarios x {args.runs} runs = {total} runs")
+    total = len(systems) * sum(runs_for(SCENARIOS[s][2], args.runs) for s in scen_ids)
+    print(f"Plan: {len(systems)} systems x {len(scen_ids)} scenarios = {total} runs "
+          f"({args.runs} per simulated device, one per recording for human replays)")
     print("Open a Text Editor and click inside it NOW. Do not touch keyboard/mouse afterwards.")
     for n in range(10, 0, -1):
         print(f"  starting in {n}...", end="\r", flush=True)
@@ -159,8 +170,9 @@ def main():
             try:
                 for scen in scen_ids:
                     name, expected, build = SCENARIOS[scen]
-                    for i in range(args.runs):
-                        cmd, trace = build(i)
+                    n_runs = runs_for(build, args.runs)
+                    for i in range(n_runs):
+                        cmd, trace = build(i, f"{sid}_{scen}_{i + 1}")
                         for attempt in range(3):
                             offset = os.path.getsize(logpath)
                             t0 = time.time()
@@ -188,7 +200,7 @@ def main():
                                      latency, leaked, keys, f"{wall:.1f}", trace])
                         rf.flush()
                         done += 1
-                        print(f"[{done}/{total}] {sid} {scen} run {i + 1}/{args.runs}: "
+                        print(f"[{done}/{total}] {sid} {scen} run {i + 1}/{n_runs}: "
                               f"{decision} score={score or '-'} leaked={leaked}/{keys}", flush=True)
                 p = psutil.Process(proc.pid)
                 t = p.cpu_times()

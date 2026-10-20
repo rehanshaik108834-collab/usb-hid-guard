@@ -131,6 +131,13 @@ if not blocked_runs.empty:
 # Overhead
 op = os.path.join(EXP, "overhead.csv")
 if os.path.exists(op):
-    print("\nRESOURCE OVERHEAD (whole run, includes idle time)")
-    print(pd.read_csv(op).to_string(index=False))
-print("\nSaved: summary_table.csv and fig_*.png in experiments/")
+    # The experiment may have run in several parts, each adding a line: combine them per system.
+    o = pd.read_csv(op)
+    ov = o.groupby("system").agg(parts=("system", "size"), cpu_seconds=("cpu_seconds", "sum"),
+                                 wall_seconds=("wall_seconds", "sum"), rss_mb=("rss_mb", "max"))
+    ov["avg_cpu_percent"] = (100 * ov.cpu_seconds / ov.wall_seconds).round(2)
+    ov = ov.round({"cpu_seconds": 2, "wall_seconds": 1}).reset_index()
+    ov.to_csv(os.path.join(EXP, "overhead_summary.csv"), index=False)
+    print("\nRESOURCE OVERHEAD (whole run, includes idle time; rss_mb = peak memory)")
+    print(ov.to_string(index=False))
+print("\nSaved: summary_table.csv, overhead_summary.csv and fig_*.png in experiments/")

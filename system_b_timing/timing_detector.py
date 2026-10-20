@@ -17,7 +17,7 @@ import pyudev
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, BASE)
-from common.device_info import hexid, read_input_device  # noqa: E402
+from common.device_info import grab_releasing_keys, hexid, read_input_device  # noqa: E402
 from common.keystrokes import (analyze, collect_keydowns, drain_keydowns,  # noqa: E402
                                is_keyboard_like, read_batch, MODIFIERS)
 from common.logger import log_event  # noqa: E402
@@ -61,7 +61,7 @@ def watch_device(node, cfg, enforce):
             return
 
         try:
-            dev.grab()
+            queued = grab_releasing_keys(dev)
             t_block = time.time()
         except OSError as err:
             log_event(SYSTEM, "input", name, vid, pid, "ERROR", f"grab failed: {err}")
@@ -70,7 +70,8 @@ def watch_device(node, cfg, enforce):
 
         # Count how many key presses got through before the block took effect.
         later = drain_keydowns(dev, 1.5)
-        all_times = [t for t, c in events + later if c not in MODIFIERS]
+        queued = [(t, c) for t, c, v in queued if v == 1]
+        all_times = [t for t, c in events + queued + later if c not in MODIFIERS]
         leaked = sum(1 for t in all_times if t <= t_block)
         latency_ms = (t_block - events[0][0]) * 1000
         log_event(SYSTEM, "input", name, vid, pid, "INFO",

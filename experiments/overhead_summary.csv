@@ -1,0 +1,4 @@
+system,parts,cpu_seconds,wall_seconds,rss_mb,avg_cpu_percent
+A,2,3.37,2921.2,28.1,0.12
+B,2,10.72,4794.7,29.3,0.22
+C,2,10.27,3665.9,29.3,0.28
