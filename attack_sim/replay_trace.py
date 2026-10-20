@@ -56,10 +56,15 @@ def main():
     hold = 0.01 if args.scale >= 0.5 else 0.001
     start = time.time()
     actual = []
+    prev_t = events[0][1]
     for code, t in events:
-        delay = start + t - time.time()
-        if delay > 0:
-            time.sleep(delay)
+        # Wait the recorded gap after the PREVIOUS key. If the VM stalls, that gap just gets
+        # longer (like a human pausing); keys are never fired in a catch-up burst.
+        if actual:
+            delay = actual[-1] + (t - prev_t) - time.time()
+            if delay > 0:
+                time.sleep(delay)
+        prev_t = t
         actual.append(time.time())
         press(ui, code, hold)
     total = time.time() - start

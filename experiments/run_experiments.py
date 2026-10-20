@@ -161,9 +161,18 @@ def main():
                     name, expected, build = SCENARIOS[scen]
                     for i in range(args.runs):
                         cmd, trace = build(i)
-                        offset = os.path.getsize(logpath)
-                        t0 = time.time()
-                        out = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+                        for attempt in range(3):
+                            offset = os.path.getsize(logpath)
+                            t0 = time.time()
+                            try:
+                                out = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+                                break
+                            except subprocess.TimeoutExpired:  # VM paused or went to sleep
+                                print(f"  {sid} {scen} run {i + 1} timed out, retrying", flush=True)
+                                time.sleep(SETTLE)
+                        else:
+                            print(f"  {sid} {scen} run {i + 1} skipped after 3 timeouts", flush=True)
+                            continue
                         time.sleep(SETTLE)
                         wall = time.time() - t0
                         with open(logpath) as f:
