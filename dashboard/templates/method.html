@@ -77,9 +77,10 @@
       </div>
     </section>
     <section class="card">
-      <div class="card-head"><h3>Blocking</h3></div>
+      <div class="card-head"><h3>Block or hold</h3></div>
       <div class="card-body prose">
-        <p>Keys the desktop may still see as pressed are released, then the device is grabbed so that no other program receives its keys. Real USB hardware is also switched off through its <code>authorized</code> file.</p>
+        <p><b>Proof:</b> typing faster than any person can is proof of injection. The device is blocked at once: its keys are cut off and real USB hardware is switched off through its <code>authorized</code> file.</p>
+        <p><b>Suspicion without proof</b> (for example a new keyboard typing <code>powershell</code>): the device is held. Its keys stop reaching the computer and a {{ p.challenge.digits if p.challenge else 4 }}-digit code appears here and in the detector's terminal. A person types the code on the new keyboard and it is unlocked; an injection device cannot see the screen, so it stays blocked.</p>
       </div>
     </section>
   </div>
@@ -93,7 +94,7 @@
     <tbody>
       <tr><td>{{ m.sys('A') }} Baseline</td><td>VID:PID against the whitelist</td><td>Once, at plug-in</td><td class="mono">{{ SYSTEMS.A.path }}</td></tr>
       <tr><td>{{ m.sys('B') }} Timing only</td><td>Median gap of the first {{ cfg.timing.min_keys }} keystrokes &lt; {{ cfg.timing.threshold_ms }} ms</td><td>Once, after {{ cfg.timing.min_keys }} keys</td><td class="mono">{{ SYSTEMS.B.path }}</td></tr>
-      <tr><td>{{ m.sys('C') }} Proposed</td><td>Descriptor, timing and content points ≥ {{ p.block_score }}</td><td>Continuously, for {{ p.watch_s }} s</td><td class="mono">{{ SYSTEMS.C.path }}</td></tr>
+      <tr><td>{{ m.sys('C') }} Proposed</td><td>Descriptor, timing and content points ≥ {{ p.block_score }}; held for a code check unless the typing is machine-speed</td><td>Continuously, for {{ p.watch_s }} s</td><td class="mono">{{ SYSTEMS.C.path }}</td></tr>
     </tbody>
   </table>
 </section>

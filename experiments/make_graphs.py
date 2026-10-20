@@ -20,7 +20,7 @@ SHORT = {"S1": "Legit\nkeyboard", "S2": "Unknown\nfast", "S3": "Spoofed\nfast, p
          "S5": "Composite\n(simulated)", "S6": "Fast human\ntypist", "S7": "Spoofed\nslow, plain",
          "S8": "Spoofed\nslow, shell", "S9": "Barcode\nscanner", "S10": "Identical\nkeyboard",
          "S11": "Spoofed\nwhitelisted", "S12": "Win+R\nlauncher", "S13": "Digispark\nID",
-         "S14": "No serial\n(simulated)"}
+         "S14": "No serial\n(simulated)", "S15": "New keyboard,\nperson + code", "S16": "Unknown ID\nslow, shell"}
 
 
 def tick(s):

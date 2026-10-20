@@ -43,6 +43,16 @@
       </div>
       {{ verdict(s.state, big=wide) }}
     </div>
+    {% if s.state == 'CHALLENGE' and s.challenge %}
+      <div class="challenge" role="status">
+        <span>Keyboard held. To unlock it, type this code <b>on the new keyboard</b>:</span>
+        <span class="code">{{ s.challenge }}</span>
+      </div>
+    {% elif s.challenge_result == 'passed' %}
+      <p class="challenge-note pass">Held for a code check: the code was typed on the keyboard, so it was unlocked.</p>
+    {% elif s.challenge_result == 'failed' %}
+      <p class="challenge-note fail">Held for a code check: no code was typed, so it stays blocked.</p>
+    {% endif %}
     {% if s.letter == 'C' and s.score is not none %}{{ meter(s.score) }}{% endif %}
     {{ signals(s.signals) }}
     {% if s.nkeys is not none or s.latency_ms is not none or s.median_ms is not none %}

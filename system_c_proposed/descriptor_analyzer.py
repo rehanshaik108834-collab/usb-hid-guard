@@ -35,18 +35,21 @@ def _read(path):
 
 
 def analyze_descriptor(udev_dev, dev, node, whitelist, pc):
-    """Returns (points, reasons, usb_parent). usb_parent is None for software-made devices."""
+    """Returns (points, reasons, fired, usb_parent). fired = the weight names that applied.
+    usb_parent is None for software-made devices."""
     w = pc["weights"]
     vid, pid = hexid(dev.info.vendor), hexid(dev.info.product)
     ident = f"{vid}:{pid}"
-    points, reasons = 0, []
+    points, reasons, fired = 0, [], set()
     sim = _sim_overrides(dev.name)
 
     if ident not in whitelist:
         points += w["not_whitelisted"]
+        fired.add("not_whitelisted")
         reasons.append(f"VID:PID {ident} not on whitelist (+{w['not_whitelisted']})")
     if ident in pc["attack_board_ids"]:
         points += w["attack_board_id"]
+        fired.add("attack_board_id")
         reasons.append(f"VID:PID {ident} matches a known attack board (+{w['attack_board_id']})")
 
     # Identity collision: another device that is ALREADY connected has the same VID:PID
@@ -65,6 +68,7 @@ def analyze_descriptor(udev_dev, dev, node, whitelist, pc):
         other.close()
         if same and not sibling:
             points += w["id_collision"]
+            fired.add("id_collision")
             reasons.append(f"VID:PID {ident} already used by connected device '{other_name}' (+{w['id_collision']})")
             break
 
@@ -86,9 +90,11 @@ def analyze_descriptor(udev_dev, dev, node, whitelist, pc):
     tag = " [simulated descriptor]" if sim.get("composite") else ""
     if composite:
         points += w["composite"]
+        fired.add("composite")
         reasons.append(f"composite device (storage + keyboard){tag} (+{w['composite']})")
     missing_serial = (usb_parent is not None and not serial) or sim.get("missing_serial", False)
     if missing_serial:
         points += w["missing_serial"]
+        fired.add("missing_serial")
         reasons.append(f"missing serial number (+{w['missing_serial']})")
-    return points, reasons, usb_parent
+    return points, reasons, fired, usb_parent

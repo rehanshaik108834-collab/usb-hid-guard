@@ -32,7 +32,7 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
   shot); report subsection 6.8 "Monitoring dashboard" written with those four figures.
 - Viva demo: `demo/viva_demo.sh` (Linux VM). 10 acts: A blocks unknown / misses spoof, B blocks fast /
   misses slow / blocks scanner, C blocks fast / slow shell / Digispark, alerts scanner, allows a human.
-  Start from an act with `./demo/viva_demo.sh 6`. Not yet run in the VM.
+  Start from an act with `./demo/viva_demo.sh 6`. Dry run done 2026-10-20: all 10 acts as expected.
 - Submission audit (2026-10-20, VM): all code compiles, all dashboard pages render with numbers matching
   the report. Fixed in the demo script: not executable, `sudo pkill` could match its own command line,
   focus prompt in the wrong order. Added README.md, requirements.txt, experiments/raw_logs/README.md;
@@ -42,7 +42,6 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
 ## Still to do
 1. Report cover: names and course (ICS) are in; replace the placeholder roll numbers (S2024001XXXX) and
    "Dr. Guide Name" with the real ones.
-2. Do a dry run of `demo/viva_demo.sh` in the Linux VM before the viva.
 
 ## Running the dashboard
 Linux VM:  `venv/bin/python dashboard/app.py`

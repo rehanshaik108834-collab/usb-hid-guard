@@ -90,7 +90,8 @@ say "Say: ID collision +30, then fast typing or a shell keyword +50 = 80 >= 70. 
 
 act 7 "$C" "System C blocks a slow attack by what it types" -- \
   attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode slow --payload shellish
-say "Say: timing looks human, but the content layer sees 'powershell' (+50). Slowing down does not help."
+say "Say: timing looks human, but the content layer sees 'powershell' (+50): score 80. Without machine-speed"
+say "     proof, C holds the keyboard and shows a code. An attack board cannot see the screen, so it stays blocked."
 
 act 8 "$C" "System C blocks a Digispark board at plug-in" -- \
   attack_sim/fake_keyboard.py --name "Digispark" --vid 16c0 --pid 27db --mode slow
@@ -105,6 +106,11 @@ if [ -n "$LEGIT_TRACE" ]; then
     attack_sim/replay_trace.py --trace "$LEGIT_TRACE" --name "Legit KB" --vid 046d --pid c31c
   say "Say: a recorded human typing session on a whitelisted keyboard scores 0 and is allowed."
 fi
+
+act 11 "$C" "System C: a new real keyboard whose user types a command" -- \
+  attack_sim/fake_keyboard.py --name "New USB Keyboard" --vid 1a2c --pid 0e24 --mode human --payload shellish --answer-challenge
+say "Say: not whitelisted +30 and 'powershell' +50 = 80, so it is held, exactly like act 7. But a person can"
+say "     read the code on the dashboard and type it, so the keyboard is unlocked. (The simulator plays the person.)"
 
 # ---- Wrap-up -----------------------------------------------------------------------------
 bold "Results (936 runs, 14 scenarios): open the dashboard's Results page"

@@ -17,6 +17,8 @@
       "composite": 40, "missing_serial": 10,
       "fast_typing": 50, "launcher": 20, "shell_keyword": 50
     },
+    "proof_signals": ["fast_typing"],
+    "challenge": { "digits": 4, "timeout_s": 30 },
     "attack_board_ids": ["16c0:27db"],
     "keywords": ["powershell", "cmd.exe", "cmd /c", "curl", "wget", "bash -c",
                  "sudo", "invoke-webrequest", "certutil", "chmod"]

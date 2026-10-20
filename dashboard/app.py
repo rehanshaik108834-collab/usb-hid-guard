@@ -18,6 +18,7 @@ app = Flask(__name__)
 
 VERDICT = {"ALLOW": ("Allowed", "allow"), "ALERT": ("Alert", "alert"), "BLOCK": ("Blocked", "block"),
            "WOULD-BLOCK": ("Would block", "block"), "WATCHING": ("Watching", "watch"),
+           "CHALLENGE": ("Held: code check", "alert"),
            "NO-DATA": ("No data", "muted"), "ERROR": ("Error", "block"), "INFO": ("Info", "muted"),
            "EXISTING": ("Present at start", "muted"), "REMOVED": ("Removed", "muted")}
 

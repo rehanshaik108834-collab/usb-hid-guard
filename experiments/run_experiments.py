@@ -48,11 +48,12 @@ def traces(pattern):
     return files or sorted(glob.glob(os.path.join(TRACES, "*.json")))
 
 
-def fake(name, vid, pid, mode, payload="hello", text=None, launcher="none"):
+def fake(name, vid, pid, mode, payload="hello", text=None, launcher="none", answer=False):
     def build(i, tag):
         cmd = [PY, FAKE, "--name", name, "--vid", vid, "--pid", pid, "--mode", mode, "--wait", "1",
                "--launcher", launcher, "--save-gaps", os.path.join(ATTACK_TRACES, f"{tag}.json")]
         cmd += ["--text", text] if text else ["--payload", payload]
+        cmd += ["--answer-challenge"] if answer else []
         return cmd, ""
     return build
 
@@ -86,6 +87,11 @@ SCENARIOS = {
     "S12": ("Slow attack, spoofed ID, Win+R launcher", "attack", fake("Spoofed KB", "0001", "0001", "slow", launcher="win-r")),
     "S13": ("Digispark board ID, slow typing", "attack", fake("Digispark", "16c0", "27db", "slow")),
     "S14": ("No serial number (simulated), spoofed ID, slow", "attack", fake("No Serial KB", "0001", "0001", "slow")),
+    # A new, not yet whitelisted keyboard whose user types a command (human speed). The simulated
+    # person reads the code System C shows and types it, as a real user at the screen would.
+    "S15": ("New keyboard, person types a command", "legit", fake("New USB Keyboard", "1a2c", "0e24", "human", "shellish", answer=True)),
+    # The same situation from an attack device with a fresh ID: it cannot see the code.
+    "S16": ("Slow attack, unknown ID, shell text", "attack", fake("Unknown Board", "dead", "beef", "slow", "shellish")),
 }
 
 DEC_RE = re.compile(r"-> (ALLOW|BLOCK|ALERT|NO-DATA|WOULD-BLOCK)\b")

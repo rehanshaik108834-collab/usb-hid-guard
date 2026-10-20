@@ -19,6 +19,8 @@ import argparse
 import json
 import os
 import random
+import re
+import sqlite3
 import time
 
 from evdev import UInput, ecodes as e
@@ -89,6 +91,26 @@ def type_text(ui, text, mode):
     return delays, times
 
 
+def read_challenge_code(name, since, wait=10.0):
+    """The code System C shows for this keyboard, read from its event log (what a person sees on
+    the dashboard or the detector's terminal). Returns None if no code check appears in time."""
+    db = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs", "events.db")
+    end = time.time() + wait
+    while time.time() < end:
+        try:
+            conn = sqlite3.connect(f"file:{db}?mode=ro", uri=True, timeout=1)
+            row = conn.execute("SELECT reason FROM events WHERE decision = 'CHALLENGE' AND name = ? AND ts >= ? "
+                               "ORDER BY id DESC LIMIT 1", (name, since)).fetchone()
+            conn.close()
+        except sqlite3.Error:
+            row = None
+        m = re.search(r"type (\d+) on this keyboard", row[0]) if row else None
+        if m:
+            return m.group(1)
+        time.sleep(0.3)
+    return None
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--name", default="Fake Keyboard")
@@ -101,6 +123,9 @@ def main():
                    help="press a launcher shortcut before typing")
     p.add_argument("--wait", type=int, default=6, help="seconds before typing starts")
     p.add_argument("--save-gaps", help="save the measured gaps between key presses to this JSON file")
+    p.add_argument("--answer-challenge", action="store_true",
+                   help="act like a person at the screen: if System C holds this keyboard and shows a "
+                        "code, type that code (an attack device cannot do this)")
     args = p.parse_args()
 
     text = args.text if args.text else PAYLOADS[args.payload]
@@ -109,6 +134,7 @@ def main():
                 product=int(args.pid, 16), bustype=e.BUS_USB)
     print(f"Created {args.name!r} with ID {args.vid}:{args.pid}, mode={args.mode}")
     print(f"Open the Text Editor and click inside it. Typing starts in {args.wait}s...")
+    started = time.strftime("%Y-%m-%d %H:%M:%S")
     time.sleep(args.wait)
 
     start = time.time()
@@ -128,6 +154,14 @@ def main():
         os.makedirs(os.path.dirname(os.path.abspath(args.save_gaps)), exist_ok=True)
         with open(args.save_gaps, "w") as f:
             json.dump({"name": args.name, "mode": args.mode, "gaps": gaps}, f)
+    if args.answer_challenge:
+        code = read_challenge_code(args.name, started)
+        if code:
+            time.sleep(1.0)  # a person reads the code first
+            type_text(ui, code, "human")
+            print(f"Typed the code {code} shown on screen")
+        else:
+            print("No code check was shown")
     time.sleep(1)
     ui.close()
     print("Device removed.")

@@ -28,7 +28,7 @@ SYSTEMS = {
 }
 LOG_TO_LETTER = {v["log"]: k for k, v in SYSTEMS.items()}
 FINAL = {"ALLOW", "ALERT", "BLOCK", "WOULD-BLOCK", "NO-DATA", "ERROR"}
-DECISIONS = ["ALLOW", "ALERT", "BLOCK", "WOULD-BLOCK", "WATCHING", "INFO", "NO-DATA", "ERROR", "EXISTING", "REMOVED"]
+DECISIONS = ["ALLOW", "ALERT", "BLOCK", "WOULD-BLOCK", "CHALLENGE", "WATCHING", "INFO", "NO-DATA", "ERROR", "EXISTING", "REMOVED"]
 WINDOWS = {"session": "Since dashboard start", "hour": "Last hour", "day": "Last 24 hours", "all": "All time"}
 STARTED = time.strftime("%Y-%m-%d %H:%M:%S")
 
@@ -84,7 +84,8 @@ def query_events(start=None, system=None, decision=None, search=None, limit=200,
 
 # ---------- reason parsing ----------
 
-_TAIL = re.compile(r"\s*\((grabbed|dry run|suspicious, not blocked|no keys typed)\)\s*$")
+_TAIL = re.compile(r"\s*\((grabbed|dry run[^)]*|suspicious, not blocked|no keys typed|held: [^)]*|"
+                   r"challenge passed|challenge failed: [^)]*)\)\s*$")
 
 
 def _layer(text):
@@ -138,6 +139,7 @@ def build_sessions(rows_ascending):
             s = {"id": e["id"], "letter": e["letter"], "name": e["name"], "vid": e["vid"], "pid": e["pid"],
                  "kind": e["kind"], "started": e["ts"], "decision": None, "score": None, "nkeys": None,
                  "median_ms": None, "signals": [], "latency_ms": None, "leaked": None, "reason": e["reason"],
+                 "challenge": None, "challenge_result": None,
                  "descriptor_score": _num(r"descriptor score (\d+)", e["reason"], int)}
             sessions.append(s)
             open_[key] = s
@@ -147,6 +149,11 @@ def build_sessions(rows_ascending):
                      nkeys=_num(r"(?:after|over) (\d+) keys", e["reason"], int),
                      median_ms=_num(r"median (?:gap )?([\d.]+) ms", e["reason"]),
                      signals=parse_signals(e["letter"], e["reason"]))
+        elif d == "CHALLENGE" and s is not None:
+            s.update(held=True, challenge=_num(r"type (\d+) on this keyboard", e["reason"], str),
+                     score=_num(r"\bscore (\d+)", e["reason"], int),
+                     nkeys=_num(r"(?:after|over) (\d+) keys", e["reason"], int),
+                     signals=parse_signals("C", e["reason"]))
         elif d == "WATCHING" and e["letter"] == "C":
             s["signals"] = parse_signals("C", e["reason"])
             s["score"] = s["descriptor_score"]
@@ -157,7 +164,9 @@ def build_sessions(rows_ascending):
                 s["latency_ms"] = _num(r"block latency (\d+) ms", e["reason"], int)
             s["leaked"] = _num(r"(\d+) (?:of \d+ )?key presses leaked", e["reason"], int)
     for s in sessions:
-        s["state"] = (s["decision"] or "WATCHING")
+        if s.get("held") and s["decision"]:
+            s["challenge_result"] = "passed" if s["decision"] == "ALLOW" else "failed"
+        s["state"] = s["decision"] or ("CHALLENGE" if s.get("held") else "WATCHING")
     return list(reversed(sessions))
 
 
@@ -177,7 +186,7 @@ def live_sessions(window="session", since=None, system=None, latest=False):
 def tally(sessions):
     t = {"seen": len(sessions), "ALLOW": 0, "ALERT": 0, "BLOCK": 0, "WATCHING": 0}
     for s in sessions:
-        k = "BLOCK" if s["state"] == "WOULD-BLOCK" else s["state"]
+        k = "BLOCK" if s["state"] in ("WOULD-BLOCK", "CHALLENGE") else s["state"]
         if k in t:
             t[k] += 1
     return t
