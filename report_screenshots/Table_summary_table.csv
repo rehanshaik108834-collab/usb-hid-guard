@@ -3,14 +3,14 @@ S1,"Legit keyboard, normal typing",legit,A,23,0.0,0.0,42.7,
 S1,"Legit keyboard, normal typing",legit,B,23,0.0,0.0,42.7,
 S1,"Legit keyboard, normal typing",legit,C,23,0.0,0.0,42.7,
 S2,"Unknown device, fast attack",attack,A,20,100.0,100.0,0.0,
-S2,"Unknown device, fast attack",attack,B,20,100.0,100.0,10.2,44.4
-S2,"Unknown device, fast attack",attack,C,20,100.0,100.0,6.0,54.0
+S2,"Unknown device, fast attack",attack,B,20,100.0,100.0,4.2,17.0
+S2,"Unknown device, fast attack",attack,C,20,100.0,100.0,4.9,40.2
 S3,"Fast attack, spoofed ID, plain text",attack,A,20,0.0,0.0,59.0,
-S3,"Fast attack, spoofed ID, plain text",attack,B,20,100.0,100.0,10.5,35.4
-S3,"Fast attack, spoofed ID, plain text",attack,C,20,100.0,100.0,6.0,21.2
+S3,"Fast attack, spoofed ID, plain text",attack,B,20,100.0,100.0,4.0,11.9
+S3,"Fast attack, spoofed ID, plain text",attack,C,20,100.0,100.0,7.2,90.8
 S4,"Fast attack, spoofed ID, shell text",attack,A,20,0.0,0.0,36.0,
-S4,"Fast attack, spoofed ID, shell text",attack,B,20,100.0,100.0,10.5,36.8
-S4,"Fast attack, spoofed ID, shell text",attack,C,20,100.0,100.0,6.0,20.6
+S4,"Fast attack, spoofed ID, shell text",attack,B,20,100.0,100.0,4.0,10.6
+S4,"Fast attack, spoofed ID, shell text",attack,C,20,100.0,100.0,5.5,41.8
 S5,Composite device (simulated),attack,A,20,0.0,0.0,43.0,
 S5,Composite device (simulated),attack,B,20,0.0,0.0,43.0,
 S5,Composite device (simulated),attack,C,20,100.0,100.0,0.0,0.0
@@ -24,13 +24,13 @@ S8,"Slow attack, spoofed ID, shell text",attack,A,20,0.0,0.0,36.0,
 S8,"Slow attack, spoofed ID, shell text",attack,B,20,0.0,0.0,36.0,
 S8,"Slow attack, spoofed ID, shell text",attack,C,20,100.0,100.0,10.0,1733.2
 S9,"Barcode scanner (fast, whitelisted)",legit,A,20,0.0,0.0,13.0,
-S9,"Barcode scanner (fast, whitelisted)",legit,B,20,100.0,100.0,10.0,38.0
+S9,"Barcode scanner (fast, whitelisted)",legit,B,20,100.0,100.0,4.0,13.0
 S9,"Barcode scanner (fast, whitelisted)",legit,C,20,0.0,100.0,13.0,
 S10,Second identical keyboard (same ID),legit,A,46,0.0,0.0,42.6,
 S10,Second identical keyboard (same ID),legit,B,46,0.0,0.0,42.6,
 S10,Second identical keyboard (same ID),legit,C,46,0.0,100.0,42.6,
 S11,"Fast attack, spoofed whitelisted ID (not connected)",attack,A,20,0.0,0.0,59.0,
-S11,"Fast attack, spoofed whitelisted ID (not connected)",attack,B,20,100.0,100.0,10.0,37.8
+S11,"Fast attack, spoofed whitelisted ID (not connected)",attack,B,20,100.0,100.0,4.4,18.9
 S11,"Fast attack, spoofed whitelisted ID (not connected)",attack,C,20,0.0,100.0,59.0,
 S12,"Slow attack, spoofed ID, Win+R launcher",attack,A,20,0.0,0.0,59.0,
 S12,"Slow attack, spoofed ID, Win+R launcher",attack,B,20,0.0,0.0,59.0,
@@ -47,3 +47,6 @@ S15,"New keyboard, person types a command",legit,C,20,0.0,0.0,36.0,
 S16,"Slow attack, unknown ID, shell text",attack,A,20,100.0,100.0,0.0,
 S16,"Slow attack, unknown ID, shell text",attack,B,20,0.0,0.0,36.0,
 S16,"Slow attack, unknown ID, shell text",attack,C,20,100.0,100.0,10.0,1734.3
+S17,"Delayed fast attack (waits 35 s), spoofed ID",attack,A,20,0.0,0.0,59.0,
+S17,"Delayed fast attack (waits 35 s), spoofed ID",attack,B,20,100.0,100.0,5.4,176.0
+S17,"Delayed fast attack (waits 35 s), spoofed ID",attack,C,20,100.0,100.0,7.2,420.8

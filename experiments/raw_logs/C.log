@@ -1,702 +1,343 @@
 System C started. Enforce: True. Alert at 30, block at 70.
-Watching for new keyboard-like devices... (Ctrl+C to stop)
-[2026-10-20 14:48:43] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:48:43] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 5173 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 5173 on it. <<<
-
-[2026-10-20 14:48:51] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:48:51] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:48:55] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:48:55] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 4603 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 4603 on it. <<<
-
-[2026-10-20 14:49:03] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:49:03] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:49:07] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:49:07] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 8639 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 8639 on it. <<<
-
-[2026-10-20 14:49:15] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:49:15] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:49:19] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:49:19] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 1416 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 1416 on it. <<<
-
-[2026-10-20 14:49:28] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:49:28] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:49:31] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:49:31] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 4589 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 4589 on it. <<<
-
-[2026-10-20 14:49:40] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:49:40] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:49:43] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:49:44] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 1972 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 1972 on it. <<<
-
-[2026-10-20 14:49:52] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:49:52] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:49:56] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:49:56] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 4111 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 4111 on it. <<<
-
-[2026-10-20 14:50:04] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:50:05] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:50:08] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:50:08] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 8095 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 8095 on it. <<<
-
-[2026-10-20 14:50:16] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:50:16] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:50:20] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:50:20] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 6910 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 6910 on it. <<<
-
-[2026-10-20 14:50:28] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:50:28] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:50:31] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:50:31] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 9702 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 9702 on it. <<<
-
-[2026-10-20 14:50:39] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:50:39] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:50:43] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:50:43] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 0112 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 0112 on it. <<<
-
-[2026-10-20 14:50:52] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:50:52] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:50:55] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:50:55] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 0274 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 0274 on it. <<<
-
-[2026-10-20 14:51:03] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:51:03] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:51:07] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:51:07] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 5305 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 5305 on it. <<<
-
-[2026-10-20 14:51:16] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:51:16] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:51:19] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:51:19] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 2349 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 2349 on it. <<<
-
-[2026-10-20 14:51:27] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:51:27] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:51:31] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:51:31] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 1971 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 1971 on it. <<<
-
-[2026-10-20 14:51:39] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:51:39] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:51:44] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:51:44] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 2432 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 2432 on it. <<<
-
-[2026-10-20 14:51:53] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:51:53] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:51:56] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:51:56] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 6578 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 6578 on it. <<<
-
-[2026-10-20 14:52:04] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:52:04] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:52:08] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:52:08] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 8095 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 8095 on it. <<<
-
-[2026-10-20 14:52:16] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:52:16] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:52:19] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:52:19] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 6657 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 6657 on it. <<<
-
-[2026-10-20 14:52:28] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:52:28] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:52:32] [C-proposed] input  0001:0001 'Composite KB' -> WATCHING (descriptor score 70: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40))
-[2026-10-20 14:52:32] [C-proposed] input  0001:0001 'Composite KB' -> CHALLENGE (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (held: type 2507 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Composite KB' is held. To unlock it, type 2507 on it. <<<
-
-[2026-10-20 14:52:41] [C-proposed] input  0001:0001 'Composite KB' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:52:41] [C-proposed] input  0001:0001 'Composite KB' -> BLOCK (score 70 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); composite device (storage + keyboard) [simulated descriptor] (+40) (challenge failed: device removed))
-[2026-10-20 14:52:44] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:52:47] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 0557 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 0557 on it. <<<
-
-[2026-10-20 14:52:53] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 2040 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:52:53] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:52:57] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:53:00] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 2459 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 2459 on it. <<<
-
-[2026-10-20 14:53:05] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1945 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:53:05] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:53:09] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:53:11] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 4376 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 4376 on it. <<<
-
-[2026-10-20 14:53:18] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1663 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:53:18] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:53:21] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:53:24] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 0825 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 0825 on it. <<<
-
-[2026-10-20 14:53:31] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 2179 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:53:31] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:53:34] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:53:37] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 1068 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 1068 on it. <<<
-
-[2026-10-20 14:53:43] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1719 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:53:43] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:53:47] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:53:49] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 9877 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 9877 on it. <<<
-
-[2026-10-20 14:53:55] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1573 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:53:55] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:53:58] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:54:01] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 5979 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 5979 on it. <<<
-
-[2026-10-20 14:54:07] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1645 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:54:07] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:54:11] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:54:13] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 0671 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 0671 on it. <<<
-
-[2026-10-20 14:54:20] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1561 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:54:20] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:54:23] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:54:26] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 0235 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 0235 on it. <<<
-
-[2026-10-20 14:54:33] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1966 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:54:33] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:54:36] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:54:39] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 3121 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 3121 on it. <<<
-
-[2026-10-20 14:54:46] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1917 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:54:46] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:54:49] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:54:51] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 1860 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 1860 on it. <<<
-
-[2026-10-20 14:54:57] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1434 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:54:57] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:55:01] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:55:03] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 6358 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 6358 on it. <<<
-
-[2026-10-20 14:55:10] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1551 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:55:10] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:55:13] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:55:16] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 6970 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 6970 on it. <<<
-
-[2026-10-20 14:55:22] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1835 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:55:22] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:55:25] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:55:27] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 5361 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 5361 on it. <<<
-
-[2026-10-20 14:55:33] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1441 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:55:33] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:55:37] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:55:39] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 1924 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 1924 on it. <<<
-
-[2026-10-20 14:55:46] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1534 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:55:46] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:55:49] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:55:52] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 0989 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 0989 on it. <<<
-
-[2026-10-20 14:55:59] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 2210 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:55:59] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:56:02] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:56:04] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 7098 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 7098 on it. <<<
-
-[2026-10-20 14:56:11] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1152 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:56:11] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:56:14] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:56:17] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 3015 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 3015 on it. <<<
-
-[2026-10-20 14:56:23] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1773 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:56:23] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:56:26] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:56:29] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 2084 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 2084 on it. <<<
-
-[2026-10-20 14:56:35] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1770 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:56:35] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:56:38] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
-[2026-10-20 14:56:40] [C-proposed] input  0001:0001 'Spoofed KB' -> CHALLENGE (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (held: type 8150 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Spoofed KB' is held. To unlock it, type 8150 on it. <<<
-
-[2026-10-20 14:56:47] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1756 ms from first key; 10 key presses leaked before block)
-[2026-10-20 14:56:47] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 14:56:50] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:56:50] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 1371 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 1371 on it. <<<
-
-[2026-10-20 14:57:03] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:57:03] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:57:07] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:57:07] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 5296 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 5296 on it. <<<
-
-[2026-10-20 14:57:20] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:57:20] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:57:24] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:57:24] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 6120 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 6120 on it. <<<
-
-[2026-10-20 14:57:37] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:57:37] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:57:40] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:57:40] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 6694 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 6694 on it. <<<
-
-[2026-10-20 14:57:53] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:57:53] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:57:56] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:57:56] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 7421 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 7421 on it. <<<
-
-[2026-10-20 14:58:10] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:58:10] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:58:13] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:58:13] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 5645 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 5645 on it. <<<
-
-[2026-10-20 14:58:26] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:58:26] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:58:29] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:58:29] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 2906 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 2906 on it. <<<
-
-[2026-10-20 14:58:42] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:58:42] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:58:45] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:58:45] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 7474 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 7474 on it. <<<
-
-[2026-10-20 14:58:58] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:58:58] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:59:02] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:59:02] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 9134 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 9134 on it. <<<
-
-[2026-10-20 14:59:14] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:59:14] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:59:17] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:59:17] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 9921 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 9921 on it. <<<
-
-[2026-10-20 14:59:31] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:59:31] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:59:34] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:59:34] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 3316 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 3316 on it. <<<
-
-[2026-10-20 14:59:47] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 14:59:47] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 14:59:50] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 14:59:50] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 0001 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 0001 on it. <<<
-
-[2026-10-20 15:00:04] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:00:04] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:00:07] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:00:07] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 7740 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 7740 on it. <<<
-
-[2026-10-20 15:00:19] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:00:20] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:00:23] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:00:23] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 9643 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 9643 on it. <<<
-
-[2026-10-20 15:00:36] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:00:36] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:00:39] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:00:39] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 2995 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 2995 on it. <<<
-
-[2026-10-20 15:00:52] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:00:52] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:00:55] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:00:55] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 5574 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 5574 on it. <<<
-
-[2026-10-20 15:01:10] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:01:10] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:01:13] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:01:13] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 8840 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 8840 on it. <<<
-
-[2026-10-20 15:01:27] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:01:27] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:01:30] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:01:30] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 3070 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 3070 on it. <<<
-
-[2026-10-20 15:01:44] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:01:44] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:01:47] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:01:47] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 2919 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 2919 on it. <<<
-
-[2026-10-20 15:01:59] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:01:59] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:02:03] [C-proposed] input  16c0:27db 'Digispark' -> WATCHING (descriptor score 70: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40))
-[2026-10-20 15:02:03] [C-proposed] input  16c0:27db 'Digispark' -> CHALLENGE (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (held: type 7196 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Digispark' is held. To unlock it, type 7196 on it. <<<
-
-[2026-10-20 15:02:16] [C-proposed] input  16c0:27db 'Digispark' -> INFO (block latency at plug-in, before any key; 0 key presses leaked before block)
-[2026-10-20 15:02:16] [C-proposed] input  16c0:27db 'Digispark' -> BLOCK (score 70 after 0 keys: VID:PID 16c0:27db not on whitelist (+30); VID:PID 16c0:27db matches a known attack board (+40) (challenge failed: device removed))
-[2026-10-20 15:02:20] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:02:22] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 2597 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 2597 on it. <<<
-
-[2026-10-20 15:02:27] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1395 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:02:27] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:02:31] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:02:34] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 2632 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 2632 on it. <<<
-
-[2026-10-20 15:02:39] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1423 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:02:39] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:02:43] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:02:45] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 0297 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 0297 on it. <<<
-
-[2026-10-20 15:02:51] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1534 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:02:51] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:02:55] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:02:58] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 7324 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 7324 on it. <<<
-
-[2026-10-20 15:03:04] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1455 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:03:04] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:03:08] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:03:10] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 2862 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 2862 on it. <<<
-
-[2026-10-20 15:03:15] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1191 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:03:15] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:03:20] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:03:22] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 6190 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 6190 on it. <<<
-
-[2026-10-20 15:03:28] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1326 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:03:28] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:03:32] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:03:34] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 2504 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 2504 on it. <<<
-
-[2026-10-20 15:03:40] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1326 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:03:40] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:03:44] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:03:46] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 9262 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 9262 on it. <<<
-
-[2026-10-20 15:03:52] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1408 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:03:52] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:03:56] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:03:59] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 4326 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 4326 on it. <<<
-
-[2026-10-20 15:04:04] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1525 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:04:04] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:04:08] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:04:11] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 7902 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 7902 on it. <<<
-
-[2026-10-20 15:04:16] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1169 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:04:16] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:04:20] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:04:22] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 4386 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 4386 on it. <<<
-
-[2026-10-20 15:04:28] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1093 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:04:28] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:04:32] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:04:35] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 7496 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 7496 on it. <<<
-
-[2026-10-20 15:04:40] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1455 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:04:40] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:04:44] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:04:47] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1129 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 1129 on it. <<<
-
-[2026-10-20 15:04:53] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1655 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:04:53] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:04:57] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:04:59] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 6078 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 6078 on it. <<<
-
-[2026-10-20 15:05:04] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1303 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:05:05] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:05:09] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:05:11] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 8753 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 8753 on it. <<<
-
-[2026-10-20 15:05:17] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1379 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:05:17] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:05:21] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:05:23] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 5307 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 5307 on it. <<<
-
-[2026-10-20 15:05:29] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1219 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:05:29] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:05:34] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:05:36] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 6329 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 6329 on it. <<<
-
-[2026-10-20 15:05:41] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1370 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:05:41] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:05:46] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:05:48] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 8701 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 8701 on it. <<<
-
-[2026-10-20 15:05:53] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1044 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:05:53] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:05:58] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:06:00] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 4011 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 4011 on it. <<<
-
-[2026-10-20 15:06:06] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1497 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:06:06] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:06:10] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> WATCHING (descriptor score 30: VID:PID 1a2c:0e24 not on whitelist (+30))
-[2026-10-20 15:06:12] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> CHALLENGE (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 8016 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'New USB Keyboard' is held. To unlock it, type 8016 on it. <<<
-
-[2026-10-20 15:06:18] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> INFO (block latency 1397 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:06:18] [C-proposed] input  1a2c:0e24 'New USB Keyboard' -> ALLOW (score 80 after 10 keys: VID:PID 1a2c:0e24 not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge passed))
-[2026-10-20 15:06:22] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:06:25] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 7959 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 7959 on it. <<<
-
-[2026-10-20 15:06:32] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1912 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:06:32] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:06:35] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:06:38] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 6042 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 6042 on it. <<<
-
-[2026-10-20 15:06:44] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1674 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:06:44] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:06:47] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:06:50] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1159 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 1159 on it. <<<
-
-[2026-10-20 15:06:56] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1692 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:06:56] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:06:59] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:07:02] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 4680 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 4680 on it. <<<
-
-[2026-10-20 15:07:08] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1591 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:07:08] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:07:11] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:07:14] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 5310 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 5310 on it. <<<
-
-[2026-10-20 15:07:21] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1697 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:07:21] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:07:24] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:07:26] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 5915 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 5915 on it. <<<
-
-[2026-10-20 15:07:34] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1553 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:07:34] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:07:37] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:07:39] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1142 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 1142 on it. <<<
-
-[2026-10-20 15:07:46] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1492 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:07:46] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:07:49] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:07:52] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1642 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 1642 on it. <<<
-
-[2026-10-20 15:07:58] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 2005 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:07:58] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:08:01] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:08:04] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1444 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 1444 on it. <<<
-
-[2026-10-20 15:08:10] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1766 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:08:10] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:08:14] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:08:16] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1112 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 1112 on it. <<<
-
-[2026-10-20 15:08:23] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1653 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:08:23] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:08:26] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:08:28] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 3886 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 3886 on it. <<<
-
-[2026-10-20 15:08:34] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1518 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:08:35] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:08:38] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:08:40] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1363 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 1363 on it. <<<
-
-[2026-10-20 15:08:46] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1506 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:08:46] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:08:49] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:08:52] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 1734 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 1734 on it. <<<
-
-[2026-10-20 15:08:58] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1890 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:08:58] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:09:01] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:09:03] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 0454 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 0454 on it. <<<
-
-[2026-10-20 15:09:10] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1646 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:09:10] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:09:13] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:09:16] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 4688 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 4688 on it. <<<
-
-[2026-10-20 15:09:22] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 2084 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:09:22] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:09:26] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:09:28] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 7732 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 7732 on it. <<<
-
-[2026-10-20 15:09:35] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1865 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:09:35] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:09:38] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:09:41] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 4931 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 4931 on it. <<<
-
-[2026-10-20 15:09:47] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 2011 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:09:47] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:09:51] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:09:53] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 7979 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 7979 on it. <<<
-
-[2026-10-20 15:10:00] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1797 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:10:00] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:10:03] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:10:05] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 3261 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 3261 on it. <<<
-
-[2026-10-20 15:10:11] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1618 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:10:11] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
-[2026-10-20 15:10:14] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
-[2026-10-20 15:10:17] [C-proposed] input  dead:beef 'Unknown Board' -> CHALLENGE (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (held: type 2442 on this keyboard within 30 s to unlock))
-
-    >>> New keyboard 'Unknown Board' is held. To unlock it, type 2442 on it. <<<
-
-[2026-10-20 15:10:22] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 1716 ms from first key; 10 key presses leaked before block)
-[2026-10-20 15:10:22] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 10 keys: VID:PID dead:beef not on whitelist (+30); shell keyword ['powershell'] (+50) (challenge failed: device removed))
+[2026-10-21 07:42:11] [C-proposed] input  0001:0001 'AT Translated Set 2 keyboard' -> WATCHING (connected before System C started: USBlock rule only)
+Watching every keyboard-like device... (Ctrl+C to stop)
+[2026-10-21 07:42:14] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:42:17] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.1, 2.9, 9.7 ms) (+50) (grabbed))
+[2026-10-21 07:42:21] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 18 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:42:25] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:42:26] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.7, 5.2, 2.9 ms) (+50) (grabbed))
+[2026-10-21 07:42:27] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 13 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:42:31] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:42:32] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.3, 3.4, 3.0 ms) (+50) (grabbed))
+[2026-10-21 07:42:33] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:42:37] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:42:38] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 8 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (7.0, 2.6, 2.7 ms) (+50) (grabbed))
+[2026-10-21 07:42:39] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 136 ms from first key; 8 key presses leaked before block)
+[2026-10-21 07:42:43] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:42:44] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.6, 3.1, 4.4 ms) (+50) (grabbed))
+[2026-10-21 07:42:45] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:42:50] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:42:51] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (6.8, 3.0, 18.5 ms) (+50) (grabbed))
+[2026-10-21 07:42:52] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 29 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:42:56] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:42:57] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.0, 3.8, 4.6 ms) (+50) (grabbed))
+[2026-10-21 07:42:58] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:01] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:02] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.3, 3.4, 3.9 ms) (+50) (grabbed))
+[2026-10-21 07:43:03] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:07] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:07] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.0, 4.3, 3.5 ms) (+50) (grabbed))
+[2026-10-21 07:43:09] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:12] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:13] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.2, 3.5, 2.6 ms) (+50) (grabbed))
+[2026-10-21 07:43:15] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:18] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:19] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.5, 5.3, 3.1 ms) (+50) (grabbed))
+[2026-10-21 07:43:20] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 13 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:23] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:24] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.5, 3.7, 3.0 ms) (+50) (grabbed))
+[2026-10-21 07:43:26] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:29] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:30] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.8, 3.0, 3.1 ms) (+50) (grabbed))
+[2026-10-21 07:43:31] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:35] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:35] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.6, 3.3, 10.9 ms) (+50) (grabbed))
+[2026-10-21 07:43:37] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 19 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:40] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:41] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (6.0, 2.6, 3.1 ms) (+50) (grabbed))
+[2026-10-21 07:43:43] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:43:46] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:47] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 7 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (8.5, 3.5, 2.7 ms) (+50) (grabbed))
+[2026-10-21 07:43:48] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 124 ms from first key; 7 key presses leaked before block)
+[2026-10-21 07:43:52] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:53] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 7 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.9, 2.6, 18.8 ms) (+50) (grabbed))
+[2026-10-21 07:43:55] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 94 ms from first key; 7 key presses leaked before block)
+[2026-10-21 07:43:58] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:43:59] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 4 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (9.1, 4.5, 3.0 ms) (+50) (grabbed))
+[2026-10-21 07:44:01] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 17 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:44:04] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:44:05] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 8 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.3, 6.1, 2.9 ms) (+50) (grabbed))
+[2026-10-21 07:44:06] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 104 ms from first key; 8 key presses leaked before block)
+[2026-10-21 07:44:11] [C-proposed] input  dead:beef 'Unknown Board' -> WATCHING (descriptor score 30: VID:PID dead:beef not on whitelist (+30))
+[2026-10-21 07:44:12] [C-proposed] input  dead:beef 'Unknown Board' -> BLOCK (score 80 after 8 keys: VID:PID dead:beef not on whitelist (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (8.9, 3.2, 3.2 ms) (+50) (grabbed))
+[2026-10-21 07:44:13] [C-proposed] input  dead:beef 'Unknown Board' -> INFO (block latency 138 ms from first key; 8 key presses leaked before block)
+[2026-10-21 07:44:17] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:44:18] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (6.5, 2.6, 3.7 ms) (+50) (grabbed))
+[2026-10-21 07:44:19] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 16 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:44:23] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:44:24] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.1, 3.4, 3.5 ms) (+50) (grabbed))
+[2026-10-21 07:44:26] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:44:29] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:44:30] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.6, 3.6, 3.4 ms) (+50) (grabbed))
+[2026-10-21 07:44:31] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:44:35] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:44:36] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.0, 2.9, 4.5 ms) (+50) (grabbed))
+[2026-10-21 07:44:37] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:44:41] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:44:42] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (11.5, 17.4, 7.5 ms) (+50) (grabbed))
+[2026-10-21 07:44:44] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 37 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:44:48] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:44:48] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 11 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (10.8, 4.2, 3.6 ms) (+50) (grabbed))
+[2026-10-21 07:44:50] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 39 ms from first key; 11 key presses leaked before block)
+[2026-10-21 07:44:53] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:44:54] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 6 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.8, 3.7, 3.2 ms) (+50) (grabbed))
+[2026-10-21 07:44:55] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 37 ms from first key; 6 key presses leaked before block)
+[2026-10-21 07:44:59] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:00] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.5, 3.2, 5.8 ms) (+50) (grabbed))
+[2026-10-21 07:45:02] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 13 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:45:06] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:06] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 7 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (9.2, 4.3, 4.2 ms) (+50) (grabbed))
+[2026-10-21 07:45:08] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 57 ms from first key; 7 key presses leaked before block)
+[2026-10-21 07:45:11] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:12] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.6, 3.8, 3.6 ms) (+50) (grabbed))
+[2026-10-21 07:45:14] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 13 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:45:17] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:19] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 16 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.5, 6.2, 5.7 ms) (+50) (grabbed))
+[2026-10-21 07:45:20] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 449 ms from first key; 16 key presses leaked before block)
+[2026-10-21 07:45:24] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:25] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (7.6, 3.7, 4.0 ms) (+50) (grabbed))
+[2026-10-21 07:45:26] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 16 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:45:30] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:30] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 5.7, 2.9 ms) (+50) (grabbed))
+[2026-10-21 07:45:32] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:45:35] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:36] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.1, 4.8, 3.2 ms) (+50) (grabbed))
+[2026-10-21 07:45:37] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:45:41] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:42] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.6, 3.7, 5.2 ms) (+50) (grabbed))
+[2026-10-21 07:45:43] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 13 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:45:46] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:47] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.6, 3.0, 4.2 ms) (+50) (grabbed))
+[2026-10-21 07:45:49] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:45:52] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:53] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 15 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.8, 2.7, 2.6 ms) (+50) (grabbed))
+[2026-10-21 07:45:55] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 313 ms from first key; 15 key presses leaked before block)
+[2026-10-21 07:45:58] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:45:59] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 29 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.4, 4.5, 2.7 ms) (+50) (grabbed))
+[2026-10-21 07:46:01] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 723 ms from first key; 33 key presses leaked before block)
+[2026-10-21 07:46:04] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:05] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.3, 3.3, 4.4 ms) (+50) (grabbed))
+[2026-10-21 07:46:06] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:46:10] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:11] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.5, 2.9, 3.0 ms) (+50) (grabbed))
+[2026-10-21 07:46:13] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:46:16] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:17] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.9, 4.0, 2.9 ms) (+50) (grabbed))
+[2026-10-21 07:46:18] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:46:22] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:22] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 2.8, 3.0 ms) (+50) (grabbed))
+[2026-10-21 07:46:24] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 9 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:46:27] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:28] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 7 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.7, 3.3, 2.4 ms) (+50) (grabbed))
+[2026-10-21 07:46:29] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 80 ms from first key; 7 key presses leaked before block)
+[2026-10-21 07:46:32] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:34] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 130 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.8, 2.8, 2.8 ms) (+50); shell keyword ['powershell'] (+50) (grabbed))
+[2026-10-21 07:46:35] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 154 ms from first key; 10 key presses leaked before block)
+[2026-10-21 07:46:38] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:39] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 6 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.7, 3.1, 2.9 ms) (+50) (grabbed))
+[2026-10-21 07:46:40] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 59 ms from first key; 6 key presses leaked before block)
+[2026-10-21 07:46:44] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:44] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (7.5, 3.1, 2.7 ms) (+50) (grabbed))
+[2026-10-21 07:46:49] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 14 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:46:52] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:53] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.3, 3.3, 2.7 ms) (+50) (grabbed))
+[2026-10-21 07:46:55] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:46:58] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:46:59] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 7 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (6.5, 3.0, 3.4 ms) (+50) (grabbed))
+[2026-10-21 07:47:01] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 150 ms from first key; 7 key presses leaked before block)
+[2026-10-21 07:47:04] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:05] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.7, 4.3, 3.3 ms) (+50) (grabbed))
+[2026-10-21 07:47:07] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:47:10] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:11] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.5, 4.5, 3.5 ms) (+50) (grabbed))
+[2026-10-21 07:47:12] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:47:16] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:16] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 11 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.8, 4.1, 5.0 ms) (+50) (grabbed))
+[2026-10-21 07:47:18] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 39 ms from first key; 11 key presses leaked before block)
+[2026-10-21 07:47:21] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:22] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.0, 3.7, 3.5 ms) (+50) (grabbed))
+[2026-10-21 07:47:23] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:47:26] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:27] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.1, 4.0, 3.1 ms) (+50) (grabbed))
+[2026-10-21 07:47:28] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:47:32] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:33] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.8, 3.5, 3.9 ms) (+50) (grabbed))
+[2026-10-21 07:47:34] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:47:37] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:38] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.5, 6.7, 4.0 ms) (+50) (grabbed))
+[2026-10-21 07:47:39] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 16 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:47:43] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:44] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.8, 4.5, 2.9 ms) (+50) (grabbed))
+[2026-10-21 07:47:46] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:47:53] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:47:54] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 7 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.9, 2.7, 3.1 ms) (+50) (grabbed))
+[2026-10-21 07:47:55] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 36 ms from first key; 7 key presses leaked before block)
+[2026-10-21 07:47:58] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:48:00] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.8, 2.7, 2.8 ms) (+50) (grabbed))
+[2026-10-21 07:48:01] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:48:04] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:48:05] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 130 after 10 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.9, 3.3, 6.3 ms) (+50); shell keyword ['powershell'] (+50) (grabbed))
+[2026-10-21 07:48:06] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 168 ms from first key; 10 key presses leaked before block)
+[2026-10-21 07:48:10] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:48:11] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (score 80 after 4 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30); USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.6, 3.6, 4.0 ms) (+50) (grabbed))
+[2026-10-21 07:48:12] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 13 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:48:15] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:17] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.8, 3.2, 2.9 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:48:20] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:23] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.1, 3.3, 4.9 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:48:26] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:28] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (13.7, 12.7, 5.1 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:48:32] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:34] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 3.6, 2.9 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:48:37] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:39] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 3.3, 3.1 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:48:43] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:45] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.5, 3.2, 4.3 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:48:48] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:50] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.6, 4.2, 3.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:48:54] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:48:56] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.2, 2.9, 2.8 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:00] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:02] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.0, 2.9, 3.9 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:05] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:07] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.4, 3.7, 3.5 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:11] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:13] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.4, 2.9, 2.8 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:16] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:18] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.9, 2.7, 2.8 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:22] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:24] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.4, 3.0, 3.7 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:28] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:33] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.9, 3.3, 3.1 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:36] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:39] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.8, 3.3, 2.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:42] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:44] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.0, 4.2, 3.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:48] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:50] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.5, 3.5, 2.5 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:54] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:49:56] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 3.9, 3.4 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:49:59] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:01] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.5, 4.1, 2.9 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:05] [C-proposed] input  05e0:1200 'Barcode Scanner' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:07] [C-proposed] input  05e0:1200 'Barcode Scanner' -> ALERT (score 50 after 13 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.4, 4.4, 2.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:10] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:12] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.3, 4.0, 3.5 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:15] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:18] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.4, 3.8, 3.0 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:22] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:24] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.8, 3.0, 3.2 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:27] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:30] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.9, 3.0, 3.5 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:33] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:35] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 3.3, 3.1 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:38] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:40] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.8, 4.1, 4.9 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:46] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:48] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.4, 2.7, 3.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:52] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:50:54] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.9, 2.4, 3.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:50:57] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:01] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (6.6, 3.3, 4.4 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:04] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:07] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.7, 2.6, 3.5 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:10] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:13] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.5, 3.7, 3.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:17] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:19] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (2.4, 3.1, 3.8 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:22] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:24] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.0, 5.5, 3.2 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:28] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:31] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.7, 3.8, 2.7 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:34] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:36] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.9, 3.7, 2.9 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:40] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:42] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.6, 3.0, 2.4 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:45] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:48] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.4, 3.3, 3.6 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:51] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:53] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (4.0, 2.8, 3.3 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:51:56] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:51:59] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (5.0, 3.0, 3.1 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:52:02] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> WATCHING (descriptor score 0: no flags)
+[2026-10-21 07:52:04] [C-proposed] input  046d:c31c 'Spoofed Logitech' -> ALERT (score 50 after 59 keys: USBlock: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 4.7, 2.8 ms) (+50) (suspicious, not blocked))
+[2026-10-21 07:52:07] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:52:38] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:52:43] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (2.9, 3.9, 2.7 ms) after 5 keys (+50) (grabbed))
+[2026-10-21 07:52:44] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 314 ms from first key; 5 key presses leaked before block)
+[2026-10-21 07:52:48] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:53:19] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:53:23] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (2.7, 5.0, 2.5 ms) after 4 keys (+50) (grabbed))
+[2026-10-21 07:53:24] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 10 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:53:28] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:54:00] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:54:03] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (3.6, 3.1, 15.0 ms) after 4 keys (+50) (grabbed))
+[2026-10-21 07:54:04] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 23 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:54:14] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:54:47] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:54:54] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (3.0, 2.9, 3.5 ms) after 5 keys (+50) (grabbed))
+[2026-10-21 07:54:56] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 802 ms from first key; 5 key presses leaked before block)
+[2026-10-21 07:54:59] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:55:30] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:55:34] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (3.2, 2.9, 2.7 ms) after 11 keys (+50) (grabbed))
+[2026-10-21 07:55:35] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 186 ms from first key; 11 key presses leaked before block)
+[2026-10-21 07:55:41] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:56:11] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:56:17] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (3.7, 4.3, 3.7 ms) after 5 keys (+50) (grabbed))
+[2026-10-21 07:56:18] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 627 ms from first key; 5 key presses leaked before block)
+[2026-10-21 07:56:21] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:56:51] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:56:57] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (2.7, 2.4, 3.0 ms) after 15 keys (+50) (grabbed))
+[2026-10-21 07:56:59] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1232 ms from first key; 15 key presses leaked before block)
+[2026-10-21 07:57:03] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:57:33] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:57:39] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (4.8, 3.0, 3.5 ms) after 4 keys (+50) (grabbed))
+[2026-10-21 07:57:41] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 11 ms from first key; 4 key presses leaked before block)
+[2026-10-21 07:57:47] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:58:17] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:58:25] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (2.7, 2.6, 2.9 ms) after 5 keys (+50) (grabbed))
+[2026-10-21 07:58:27] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1393 ms from first key; 5 key presses leaked before block)
+[2026-10-21 07:58:33] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:59:03] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:59:09] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (2.8, 2.6, 2.6 ms) after 5 keys (+50) (grabbed))
+[2026-10-21 07:59:11] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 153 ms from first key; 5 key presses leaked before block)
+[2026-10-21 07:59:14] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 07:59:44] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 07:59:51] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (3.0, 3.3, 3.2 ms) after 19 keys (+50) (grabbed))
+[2026-10-21 07:59:52] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 360 ms from first key; 19 key presses leaked before block)
+[2026-10-21 07:59:56] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:00:33] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:00:37] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (4.9, 3.5, 2.9 ms) after 11 keys (+50) (grabbed))
+[2026-10-21 08:00:39] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 166 ms from first key; 11 key presses leaked before block)
+[2026-10-21 08:00:42] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:01:14] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:01:17] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (4.7, 3.1, 3.7 ms) after 6 keys (+50) (grabbed))
+[2026-10-21 08:01:18] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 59 ms from first key; 6 key presses leaked before block)
+[2026-10-21 08:01:21] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:01:55] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:01:59] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (4.3, 4.3, 3.3 ms) after 4 keys (+50) (grabbed))
+[2026-10-21 08:02:01] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 12 ms from first key; 4 key presses leaked before block)
+[2026-10-21 08:02:04] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:02:36] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:02:41] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (2.8, 3.6, 2.8 ms) after 8 keys (+50) (grabbed))
+[2026-10-21 08:02:42] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1596 ms from first key; 8 key presses leaked before block)
+[2026-10-21 08:02:46] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:03:18] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:03:23] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (2.7, 2.7, 6.6 ms) after 7 keys (+50) (grabbed))
+[2026-10-21 08:03:24] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 1158 ms from first key; 7 key presses leaked before block)
+[2026-10-21 08:03:28] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:04:01] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:04:02] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (3.9, 3.4, 2.4 ms) after 4 keys (+50) (grabbed))
+[2026-10-21 08:04:04] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 20 ms from first key; 7 key presses leaked before block)
+[2026-10-21 08:04:07] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:04:38] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:04:49] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (3.3, 2.5, 3.5 ms) after 5 keys (+50) (grabbed))
+[2026-10-21 08:04:50] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 105 ms from first key; 5 key presses leaked before block)
+[2026-10-21 08:04:53] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:05:24] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:05:30] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (7.4, 3.6, 16.5 ms) after 9 keys (+50) (grabbed))
+[2026-10-21 08:05:32] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 142 ms from first key; 9 key presses leaked before block)
+[2026-10-21 08:05:35] [C-proposed] input  0001:0001 'Spoofed KB' -> WATCHING (descriptor score 30: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30))
+[2026-10-21 08:06:05] [C-proposed] input  0001:0001 'Spoofed KB' -> NO-DATA (score 30 after 0 keys: VID:PID 0001:0001 already used by connected device 'AT Translated Set 2 keyboard' (+30) (no keys typed))
+[2026-10-21 08:06:10] [C-proposed] input  0001:0001 'Spoofed KB' -> BLOCK (USBlock rule after the first 30 s: rapid event sequence: 3 gaps in a row under 20 ms (4.0, 2.6, 4.5 ms) after 5 keys (+50) (grabbed))
+[2026-10-21 08:06:11] [C-proposed] input  0001:0001 'Spoofed KB' -> INFO (block latency 48 ms from first key; 5 key presses leaked before block)

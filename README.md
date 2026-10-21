@@ -4,45 +4,51 @@ Application-based project in cyber security (ICS).
 Team: Aditya Sai Koka, Karpurapu Sai Satwik, Mokshagna Manduva, Shaik Rehan.
 
 USB keystroke-injection devices (USB Rubber Ducky, Digispark, Arduino, Raspberry Pi Pico) pretend to be a
-keyboard and type commands at machine speed. Identity-based USB whitelisting, the approach of USBGuard,
-trusts the Vendor ID and Product ID that a device reports, and an attacker can copy those. This project
-implements that approach, shows that a spoofed ID bypasses it, and proposes a detector that also judges a
-new keyboard by what it does.
+keyboard and type commands at machine speed. The project builds on the paper **USBlock: Blocking USB-based
+Keypress Injection Attacks** (Neuner et al., IFIP DBSec 2018), which blocks a keyboard as soon as it types
+faster than any person can. We re-implemented USBlock in full, measured where it fails, and built an
+improved detector on top of it.
 
 | System | Folder | Decides on |
 | --- | --- | --- |
-| A, existing approach | `system_a_baseline/` | VID:PID against a whitelist, once at plug-in |
-| B, timing only | `system_b_timing/` | Median gap of the first 10 keystrokes below 20 ms |
-| C, proposed | `system_c_proposed/` | Points from three layers (descriptor, typing speed, typed content); alert at 30, block or hold at 70 |
+| A, ID whitelist (industry reference, like USBGuard) | `system_a_baseline/` | VID:PID against a whitelist, once at plug-in |
+| B, USBlock (the base paper) | `system_b_timing/`, `common/usblock.py` | 3 keypresses in a row, each under 20 ms after the one before, on every keypress of every connected keyboard; YubiKeys must type MODHEX |
+| C, ours | `system_c_proposed/` | USBlock's rule unchanged, plus descriptor checks and the typed content in a new keyboard's first 30 s; alert at 30, block or hold at 70 |
 
-At 70 points, System C blocks at once only when it has proof: typing faster than any person can.
-Otherwise the keyboard is held (its keys stop reaching the computer) and a 4-digit code is shown on the
-dashboard and in the detector's terminal. A person types the code on the new keyboard and it is unlocked;
-an injection device cannot see the screen and stays blocked.
+USBlock's reaction is implemented as in the paper: the device's drivers are unbound, its USB port is
+powered off for 10 s, and if the same port attacks again the whole hub is switched off.
 
-## Results (1,056 automated runs, 16 scenarios)
+System C blocks at once only when USBlock's rule fires, which is proof: no person types that fast. Other
+suspicious keyboards reaching 70 points are held (their keys stop reaching the computer) and a 4-digit
+code is shown on the dashboard and in the detector's terminal. A person types the code on the new keyboard
+and it is unlocked; an injection device cannot see the screen and stays blocked. USBlock's rule keeps
+running for as long as a keyboard is connected, so an attack that waits before typing is still caught.
 
-| | A | B | C |
+## Results (1,116 automated runs, 17 scenarios)
+
+| | A: ID whitelist | B: USBlock | C: ours |
 | --- | --- | --- | --- |
-| Attack runs blocked | 27% (60 of 220) | 36% (80 of 220) | 64% (140 of 220) |
-| Attack runs blocked or alerted | 27% | 36% | 100% |
+| Attack runs blocked | 25% (60 of 240) | 42% (100 of 240) | 67% (160 of 240) |
+| Attack runs blocked or alerted | 25% | 42% | 100% |
 | Legitimate runs wrongly blocked | 20 of 132 (new keyboard) | 20 of 132 (barcode scanner) | 0 of 132 |
-| Keystrokes leaked before a fast attack was stopped | not stopped (spoofed ID) | about 10 | 6 |
-| Average CPU / peak memory | 0.12% / 28 MB | 0.30% / 29 MB | 0.39% / 32 MB |
+| Keystrokes leaked before a fast attack was stopped (median) | not stopped (spoofed ID) | 4 | 4 |
+| Average CPU / peak memory | 0.10% / 28 MB | 0.27% / 29 MB | 0.35% / 32 MB |
 
 Tested with real hardware too: a USB wireless keyboard was held after its user typed "powershell" and
-unlocked by typing the code shown.
+unlocked by typing the code shown; without the code it was blocked and switched off.
 
-Typing recorded from 11 people never came close to the 20 ms threshold (closest: 86 ms); the simulated
-attack typed at a median of 3.4 ms per key. Full tables: `experiments/summary_table.csv`; graphs:
-`experiments/fig_*.png`. The full write-up is in the project report, submitted separately.
+Typing recorded from 11 people never contained two gaps under 20 ms in a row, so USBlock's rule never
+fired on a person; the simulated attack typed at a median of 3.3 ms per key. Full tables:
+`experiments/summary_table.csv`; graphs: `experiments/fig_*.png`. The full write-up is in the project
+report, submitted separately.
 
 ## Project layout
 
 ```
-common/              shared code: key reading, safe blocking, logging; config.json holds every threshold and weight
+common/              shared code: key reading, safe blocking, logging, USBlock's rule and reaction
+                     (usblock.py); config.json holds every threshold and weight
 system_a_baseline/   System A (identity whitelist)
-system_b_timing/     System B (timing only)
+system_b_timing/     System B (USBlock re-implementation)
 system_c_proposed/   System C (descriptor, timing and content layers + risk engine)
 attack_sim/          harmless virtual attack devices (Linux uinput), human typing recorder and replayer
   human_traces/      46 typing recordings from 11 people (key timing only, no text)
@@ -73,7 +79,7 @@ sudo venv/bin/python attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 
 # the dashboard, then open http://127.0.0.1:5000
 venv/bin/python dashboard/app.py
 
-# the whole experiment (about 3 hours) and its graphs
+# the whole experiment (about 5 hours) and its graphs
 sudo venv/bin/python experiments/run_experiments.py --runs 20 --fresh
 venv/bin/python experiments/make_graphs.py
 venv/bin/python experiments/analyze_traces.py

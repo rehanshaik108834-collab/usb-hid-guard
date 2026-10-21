@@ -45,9 +45,17 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
   dashboard and demo (new act 11) updated. Real keyboard tests done with a 2.4G wireless receiver (3554:fa09): code typed -> unlocked;
   no code -> blocked and USB switched off (authorized = 0). Report 6.9 + Fig 6.14-6.17; Fig 6.10/6.12 refreshed.
 
+- USBlock phase (2026-10-21): base paper is USBlock (Neuner et al., DBSec 2018). `common/usblock.py` holds
+  its rule (3 gaps in a row under 20 ms, YubiKey MODHEX exception) and reaction (authorized = 0, port off
+  10 s, hub off 10 s on a repeat attack within 120 s). B and C watch keyboards present at start; C keeps
+  USBlock's rule running after its 30 s window. New scenario S17 (fast attack after 35 s). Experiment now
+  1,116 runs, 17 scenarios: A 25% / B 42% / C 67% attacks blocked, C 100% flagged, 0 false blocks.
+  Report "Improving USBlock" (https://claude.ai/artifact/C93kLTwERG4sssLqDMAmoM) sections 2-6 updated.
+
 ## Still to do
-1. Commit and push; export the report as PDF from the document's menu. (Cover done: names and roll
-   numbers filled in, no guide.)
+1. Commit and push the USBlock results.
+2. Take the screenshots for report sections 3.5, 5.9, 6.6 (placeholders still in the report).
+3. Export the "Improving USBlock" report as PDF.
 
 ## Running the dashboard
 Linux VM:  `venv/bin/python dashboard/app.py`
