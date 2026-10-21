@@ -1,20 +1,17 @@
 """Layer 4: combine descriptor, timing and content signals into one risk score."""
-import statistics
 
 
-def compute(d_points, d_reasons, d_fired, times, analyzer, pc):
-    """Returns (total, reasons, fired). fired = names of the weights that applied."""
+def compute(d_points, d_reasons, d_fired, usblock_reason, analyzer, pc):
+    """Returns (total, reasons, fired). fired = names of the weights that applied.
+    usblock_reason: what USBlock's unchanged rule found so far (common/usblock.RES), or None."""
     w = pc["weights"]
     total = d_points
     reasons = list(d_reasons)
     fired = set(d_fired)
-    if len(times) >= pc["min_keys"]:
-        gaps = [1000.0 * (b - a) for a, b in zip(times, times[1:])]
-        med = statistics.median(gaps)
-        if med < pc["median_threshold_ms"]:
-            total += w["fast_typing"]
-            fired.add("fast_typing")
-            reasons.append(f"fast typing: median {med:.1f} ms over {len(times)} keys (+{w['fast_typing']})")
+    if usblock_reason:  # timing layer: USBlock's rule (or its YubiKey MODHEX check) fired
+        total += w["fast_typing"]
+        fired.add("fast_typing")
+        reasons.append(f"USBlock: {usblock_reason.split(' after ')[0]} (+{w['fast_typing']})")
     if analyzer.launcher:
         total += w["launcher"]
         fired.add("launcher")
@@ -27,7 +24,7 @@ def compute(d_points, d_reasons, d_fired, times, analyzer, pc):
 
 
 def has_proof(fired, pc):
-    """True if a sign that no person can produce applied (machine-speed typing by default).
+    """True if a sign that no person can produce applied (USBlock's rule by default).
     Without one, a high score is strong suspicion but not proof, so the device is held for a
     code check instead of being blocked for good."""
     return bool(set(fired) & set(pc.get("proof_signals", ["fast_typing"])))

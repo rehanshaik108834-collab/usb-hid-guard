@@ -55,7 +55,7 @@ act() {
 
 
 bold "HID Guard viva demo"
-say "Three detectors, the same attacks: A = identity whitelist (like USBGuard), B = timing only,"
+say "Three detectors, the same attacks: A = identity whitelist (like USBGuard), B = USBlock (the base paper),"
 say "C = proposed (descriptor + timing + content -> risk score; alert at 30, block at 70)."
 
 # ---- Part 1: the existing approach -------------------------------------------------------
@@ -67,18 +67,19 @@ act 2 "$A" "System A lets a spoofed ID through" -- \
   attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode fast --payload shellish
 say "Say: the same board claiming a trusted VID:PID types its whole payload. The ID is just a claim."
 
-# ---- Part 2: timing alone ----------------------------------------------------------------
-act 3 "$B" "System B blocks the fast spoofed attack" -- \
+# ---- Part 2: the base paper, USBlock --------------------------------------------------------------
+act 3 "$B" "USBlock (System B) blocks the fast spoofed attack" -- \
   attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode fast --payload shellish
-say "Say: ~3 ms between keys; no human is below 20 ms (closest of 11 people: 86 ms). Blocked after 10 keys."
+say "Say: USBlock's rule: 3 gaps in a row under 20 ms. The attack types ~3 ms apart, so it is cut off after"
+say "     4 keystrokes. No human ever made even 2 such gaps in a row (11 people, 46 recordings)."
 
-act 4 "$B" "System B misses a slow attack" -- \
+act 4 "$B" "USBlock misses a slow attack" -- \
   attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode slow
-say "Say: the attacker just slows down to human speed and timing alone sees nothing."
+say "Say: the attacker just slows down to human speed and USBlock, which uses timing alone, sees nothing."
 
-act 5 "$B" "System B blocks a legitimate barcode scanner" -- \
+act 5 "$B" "USBlock blocks a legitimate barcode scanner" -- \
   attack_sim/fake_keyboard.py --name "Barcode Scanner" --vid 05e0 --pid 1200 --mode fast --text 4006381333931
-say "Say: scanners type as fast as attacks. B blocked the scanner in every run (a false positive)."
+say "Say: scanners type as fast as attacks. USBlock blocked the scanner in every run, and its user has no way back."
 
 # ---- Part 3: the proposed detector -------------------------------------------------------
 say ""
@@ -86,7 +87,7 @@ say "Now switch the browser to Live monitor: each System C card shows the score 
 
 act 6 "$C" "System C blocks the fast spoofed attack" -- \
   attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode fast --payload shellish
-say "Say: ID collision +30, then fast typing or a shell keyword +50 = 80 >= 70. Decided after 6 keys (B needs 10)."
+say "Say: ID collision +30, then USBlock's rapid sequence +50 = 80 >= 70. That is proof, so it is blocked at once."
 
 act 7 "$C" "System C blocks a slow attack by what it types" -- \
   attack_sim/fake_keyboard.py --name "Spoofed KB" --vid 0001 --pid 0001 --mode slow --payload shellish

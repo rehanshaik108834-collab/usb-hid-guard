@@ -14,13 +14,13 @@ df["blocked"] = df["decision"].isin(["BLOCK", "WOULD-BLOCK"])
 df["flagged"] = df["decision"].isin(["BLOCK", "WOULD-BLOCK", "ALERT"])
 df["latency_ms"] = pd.to_numeric(df["latency_ms"], errors="coerce")
 SYS = [s for s in ["A", "B", "C"] if s in df["system"].unique()]
-LABEL = {"A": "A: Baseline (ID only)", "B": "B: Timing-only", "C": "C: Proposed (multi-signal)"}
+LABEL = {"A": "A: ID whitelist", "B": "B: USBlock (base paper)", "C": "C: Ours (multi-signal)"}
 COLOR = {"A": "#999999", "B": "#e69f00", "C": "#0072b2"}
 SHORT = {"S1": "Legit\nkeyboard", "S2": "Unknown\nfast", "S3": "Spoofed\nfast, plain", "S4": "Spoofed\nfast, shell",
          "S5": "Composite\n(simulated)", "S6": "Fast human\ntypist", "S7": "Spoofed\nslow, plain",
          "S8": "Spoofed\nslow, shell", "S9": "Barcode\nscanner", "S10": "Identical\nkeyboard",
          "S11": "Spoofed\nwhitelisted", "S12": "Win+R\nlauncher", "S13": "Digispark\nID",
-         "S14": "No serial\n(simulated)", "S15": "New keyboard,\nperson + code", "S16": "Unknown ID\nslow, shell"}
+         "S14": "No serial\n(simulated)", "S15": "New keyboard,\nperson + code", "S16": "Unknown ID\nslow, shell", "S17": "Delayed\nfast (35 s)"}
 
 
 def tick(s):

@@ -21,7 +21,7 @@ CONFIG = os.path.join(BASE, "common", "config.json")
 SYSTEMS = {
     "A": {"log": "A-baseline", "name": "Baseline", "long": "Identity whitelist (existing approach)",
           "script": "baseline_monitor.py", "path": "system_a_baseline/baseline_monitor.py"},
-    "B": {"log": "B-timing", "name": "Timing only", "long": "Keystroke-timing detector",
+    "B": {"log": "B-timing", "name": "USBlock", "long": "USBlock re-implementation (base paper)",
           "script": "timing_detector.py", "path": "system_b_timing/timing_detector.py"},
     "C": {"log": "C-proposed", "name": "Proposed", "long": "Multi-signal behavioural detector",
           "script": "main_detector.py", "path": "system_c_proposed/main_detector.py"},
@@ -90,7 +90,7 @@ _TAIL = re.compile(r"\s*\((grabbed|dry run[^)]*|suspicious, not blocked|no keys 
 
 def _layer(text):
     t = text.lower()
-    if "fast typing" in t or "median gap" in t:
+    if "fast typing" in t or "median gap" in t or "rapid event" in t or "modhex" in t:
         return "timing"
     if "launcher" in t or "shell keyword" in t:
         return "content"
@@ -135,7 +135,10 @@ def build_sessions(rows_ascending):
             continue
         key = (e["system"], e["name"], e["vid"], e["pid"])
         s = open_.get(key)
-        if d == "WATCHING" or (d in FINAL and (s is None or s["decision"])):
+        # System C keeps applying USBlock's rule after its first verdict: a later block belongs to the same card.
+        late = (d == "BLOCK" and s is not None and s["decision"] in ("ALLOW", "ALERT", "NO-DATA")
+                and "after the first" in (e["reason"] or ""))
+        if d == "WATCHING" or (d in FINAL and (s is None or s["decision"]) and not late):
             s = {"id": e["id"], "letter": e["letter"], "name": e["name"], "vid": e["vid"], "pid": e["pid"],
                  "kind": e["kind"], "started": e["ts"], "decision": None, "score": None, "nkeys": None,
                  "median_ms": None, "signals": [], "latency_ms": None, "leaked": None, "reason": e["reason"],
@@ -253,7 +256,7 @@ WEIGHT_TEXT = {
     "id_collision": ("VID:PID already used by another connected device", "descriptor"),
     "composite": ("Composite device: storage and keyboard together", "descriptor"),
     "missing_serial": ("No serial number reported", "descriptor"),
-    "fast_typing": ("Median keystroke gap below the threshold", "timing"),
+    "fast_typing": ("USBlock's rapid event sequence: 3 gaps in a row under 20 ms", "timing"),
     "launcher": ("Launcher shortcut typed (Win+R, Ctrl+Alt+T, Alt+F2)", "content"),
     "shell_keyword": ("Shell command keyword typed", "content"),
 }

@@ -48,9 +48,9 @@ def traces(pattern):
     return files or sorted(glob.glob(os.path.join(TRACES, "*.json")))
 
 
-def fake(name, vid, pid, mode, payload="hello", text=None, launcher="none", answer=False):
+def fake(name, vid, pid, mode, payload="hello", text=None, launcher="none", answer=False, wait=1):
     def build(i, tag):
-        cmd = [PY, FAKE, "--name", name, "--vid", vid, "--pid", pid, "--mode", mode, "--wait", "1",
+        cmd = [PY, FAKE, "--name", name, "--vid", vid, "--pid", pid, "--mode", mode, "--wait", str(wait),
                "--launcher", launcher, "--save-gaps", os.path.join(ATTACK_TRACES, f"{tag}.json")]
         cmd += ["--text", text] if text else ["--payload", payload]
         cmd += ["--answer-challenge"] if answer else []
@@ -92,6 +92,9 @@ SCENARIOS = {
     "S15": ("New keyboard, person types a command", "legit", fake("New USB Keyboard", "1a2c", "0e24", "human", "shellish", answer=True)),
     # The same situation from an attack device with a fresh ID: it cannot see the code.
     "S16": ("Slow attack, unknown ID, shell text", "attack", fake("Unknown Board", "dead", "beef", "slow", "shellish")),
+    # USBlock checks every keypress for as long as a device is connected (paper Sec. 3.5): an attack that
+    # waits longer than System C's 30 s first look must still be caught.
+    "S17": ("Delayed fast attack (waits 35 s), spoofed ID", "attack", fake("Spoofed KB", "0001", "0001", "fast", wait=35)),
 }
 
 DEC_RE = re.compile(r"-> (ALLOW|BLOCK|ALERT|NO-DATA|WOULD-BLOCK)\b")
@@ -108,8 +111,7 @@ def parse_log(text):
             if PRIORITY[d] >= PRIORITY.get(decision, -1):
                 decision = d
                 s = re.search(r"\bscore (\d+) after", line)
-                if s:
-                    score = int(s.group(1))
+                score = int(s.group(1)) if s else ""  # never keep the score of an earlier line
         elif "-> INFO" in line:
             lk = re.search(r"(\d+) (?:of \d+ )?key presses leaked", line)
             if lk:

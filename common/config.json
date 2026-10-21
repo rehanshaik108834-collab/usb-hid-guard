@@ -5,10 +5,9 @@
     "1d6b:0001", "1d6b:0002", "1d6b:0003",
     "046d:c31c", "05e0:1200"
   ],
-  "timing": { "threshold_ms": 20, "min_keys": 10, "timeout_s": 20 },
+  "timing": { "threshold_ms": 20, "sequence": 3, "yubico_vids": ["1050"], "modhex": "bcdefghijklnrtuv",
+              "port_off_s": 10, "repeat_window_s": 120 },
   "proposed": {
-    "min_keys": 6,
-    "median_threshold_ms": 20,
     "watch_s": 30,
     "alert_score": 30,
     "block_score": 70,
