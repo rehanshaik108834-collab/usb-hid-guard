@@ -53,9 +53,8 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
   Report "Improving USBlock" (https://claude.ai/artifact/C93kLTwERG4sssLqDMAmoM) sections 2-6 updated.
 
 ## Still to do
-1. Commit and push the USBlock results.
-2. Take the screenshots for report sections 3.5, 5.9, 6.6 (placeholders still in the report).
-3. Export the "Improving USBlock" report as PDF.
+1. Export the "Improving USBlock" report as PDF. (Results pushed; screenshots in
+   report_screenshots/usblock/ are in the report as Figures 3.1-3.4, 5.1-5.6, 6.10-6.14.)
 
 ## Running the dashboard
 Linux VM:  `venv/bin/python dashboard/app.py`
