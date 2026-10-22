@@ -52,9 +52,20 @@ The detectors and simulator need Linux (evdev, uinput, udev) and sudo. Everythin
   1,116 runs, 17 scenarios: A 25% / B 42% / C 67% attacks blocked, C 100% flagged, 0 false blocks.
   Report "Improving USBlock" (https://claude.ai/artifact/C93kLTwERG4sssLqDMAmoM) sections 2-6 updated.
 
+## Links (all made with Claude; ask Rehan for access if one does not open)
+- Report to submit, "Improving USBlock": https://claude.ai/artifact/C93kLTwERG4sssLqDMAmoM
+- Presentation, 7 slides in the teacher's format: https://claude.ai/artifact/SuGyv5fQgQb7aBPPRNAUPi
+  Palette: paper #F5F2EA with faint grain, text #18212C, muted #46505C, accent #B8501E,
+  blue #2C5C8F, dividers #C8C3B8. Light mode only; dark only for the slide 4 evidence band.
+- Team study guide (explains everything + viva Q&A): https://claude.ai/artifact/9Znw3qzntyc2BdScyxMKRy
+
+## Working on this project with Claude Code
+Open Claude Code in this folder and start with: "Read HANDOFF.md and README.md, then help me with ...".
+The team is beginners: ask for exact commands. Always commit and push after work
+(a VM snapshot restore once wiped 6 hours of unpushed work).
+
 ## Still to do
-1. Export the "Improving USBlock" report as PDF. (Results pushed; screenshots in
-   report_screenshots/usblock/ are in the report as Figures 3.1-3.4, 5.1-5.6, 6.10-6.14.)
+1. Export the report as PDF and the presentation as .pptx (Share -> Export) for submission.
 
 ## Running the dashboard
 Linux VM:  `venv/bin/python dashboard/app.py`
