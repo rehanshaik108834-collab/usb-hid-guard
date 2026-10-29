@@ -57,7 +57,7 @@ act() {
 show_live() {
   echo "  Detector says:"
   tail -n +1 -f "$LOG" > >(grep --line-buffered -E -- "-> (ALLOW|ALERT|BLOCK|WOULD-BLOCK|CHALLENGE|INFO|NO-DATA)|>>>" \
-    | grep --line-buffered -v "connected before" | sed -u 's/^ */    /') &
+    | grep --line-buffered -v "connected before" | sed -u 's/^ */    /; s/$/\r/') &
   LIVE=$!
 }
 
@@ -130,7 +130,7 @@ if [ 11 -ge "$START" ]; then
   say "Now attach the receiver (VirtualBox: Devices > USB > the receiver), click in the Text Editor,"
   say "type powershell on the real keyboard, then type the code shown below on that same keyboard."
   say "Press Enter here when you are done."
-  tail -n +1 -f "$LOG" > >(grep --line-buffered -E -- "-> (WATCHING|ALLOW|ALERT|BLOCK|CHALLENGE|INFO)|>>>" | grep --line-buffered -v "connected before" | sed -u 's/^/    /') &
+  tail -n +1 -f "$LOG" > >(grep --line-buffered -E -- "-> (WATCHING|ALLOW|ALERT|BLOCK|CHALLENGE|INFO)|>>>" | grep --line-buffered -v "connected before" | sed -u 's/^/    /; s/$/\r/') &
   TAIL=$!
   read -rp "" _
   kill "$TAIL" 2>/dev/null
