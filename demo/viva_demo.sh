@@ -50,7 +50,7 @@ act() {
   sleep 3
   stop "$det"
   echo "  Detector said:"
-  grep -E -- "-> (ALLOW|ALERT|BLOCK|WOULD-BLOCK|INFO|NO-DATA)" "$LOG" | sed 's/^/    /'
+  grep -E -- "-> (ALLOW|ALERT|BLOCK|WOULD-BLOCK|CHALLENGE|INFO|NO-DATA)|>>>" "$LOG" | sed 's/^ */    /'
 }
 
 
@@ -108,10 +108,28 @@ if [ -n "$LEGIT_TRACE" ]; then
   say "Say: a recorded human typing session on a whitelisted keyboard scores 0 and is allowed."
 fi
 
-act 11 "$C" "System C: a new real keyboard whose user types a command" -- \
-  attack_sim/fake_keyboard.py --name "New USB Keyboard" --vid 1a2c --pid 0e24 --mode human --payload shellish --answer-challenge
-say "Say: not whitelisted +30 and 'powershell' +50 = 80, so it is held, exactly like act 7. But a person can"
-say "     read the code on the dashboard and type it, so the keyboard is unlocked. (The simulator plays the person.)"
+# Act 11 uses a real USB keyboard instead of the simulator: System C runs until Enter is pressed,
+# and its decisions are shown here as they happen.
+if [ 11 -ge "$START" ]; then
+  bold "Act 11: System C and a real new keyboard"
+  say "The keyboard's receiver must NOT be attached to the VM yet (VirtualBox: Devices > USB)."
+  read -rp "  Press Enter to start System C... " _
+  sudo -v || exit 1
+  stop "--enforce"
+  : > "$LOG"
+  sudo $PY -u "$C" --enforce >> "$LOG" 2>&1 &
+  sleep 3
+  say "Now attach the receiver (VirtualBox: Devices > USB > the receiver), click in the Text Editor,"
+  say "type powershell on the real keyboard, then type the code shown below on that same keyboard."
+  say "Press Enter here when you are done."
+  tail -n +1 -f "$LOG" > >(grep --line-buffered -E -- "-> (WATCHING|ALLOW|ALERT|BLOCK|CHALLENGE|INFO)|>>>" | grep --line-buffered -v "connected before" | sed -u 's/^/    /') &
+  TAIL=$!
+  read -rp "" _
+  kill "$TAIL" 2>/dev/null
+  stop "$C"
+  say "Say: unknown ID +30, no serial +10, 'powershell' +50 = 90, but typed at human speed, so no proof."
+  say "     It is held and a code is shown; a person can type it, an attack board cannot see the screen."
+fi
 
 # ---- Wrap-up -----------------------------------------------------------------------------
 bold "Results (1,116 runs, 17 scenarios): open the dashboard's Results page"
