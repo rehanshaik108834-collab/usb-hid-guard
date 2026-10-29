@@ -46,11 +46,19 @@ act() {
   : > "$LOG"
   sudo $PY -u "$det" --enforce >> "$LOG" 2>&1 &
   sleep 3
+  show_live
   sudo $PY "$@" --wait 3
   sleep 3
+  kill "$LIVE" 2>/dev/null
   stop "$det"
-  echo "  Detector said:"
-  grep -E -- "-> (ALLOW|ALERT|BLOCK|WOULD-BLOCK|CHALLENGE|INFO|NO-DATA)|>>>" "$LOG" | sed 's/^ */    /'
+}
+
+# Print the detector's decisions (and any code it shows) while the act runs.
+show_live() {
+  echo "  Detector says:"
+  tail -n +1 -f "$LOG" > >(grep --line-buffered -E -- "-> (ALLOW|ALERT|BLOCK|WOULD-BLOCK|CHALLENGE|INFO|NO-DATA)|>>>" \
+    | grep --line-buffered -v "connected before" | sed -u 's/^ */    /') &
+  LIVE=$!
 }
 
 
